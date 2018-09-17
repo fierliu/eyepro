@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="420.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Pane layoutY="7.0" prefHeight="434.0" prefWidth="849.0">
+         <children>
+            <ToolBar prefHeight="0.0" prefWidth="849.0">
+              <items>
+                  <Button fx:id="setColorBtn" mnemonicParsing="false" onAction="#setColorBtnHandler" text="设置护眼色" />
+              </items>
+            </ToolBar>
+            <Label fx:id="lbTime" layoutX="154.0" layoutY="94.0" prefHeight="36.0" prefWidth="258.0" style="-fx-background-color: grey;" text="" />
+            <Button fx:id="getTimeBtn" layoutX="65.0" layoutY="97.0" mnemonicParsing="false" onAction="#getTimeBtnHandler" text="计时1" />
+            <Label layoutX="543.0" layoutY="134.0" text="提醒间隔" />
+            <Button fx:id="getTimeBtn1" layoutX="65.0" layoutY="149.0" mnemonicParsing="false" onAction="#getTimeBtn1Handler" text="计时2" />
+            <Label fx:id="lbTime1" layoutX="154.0" layoutY="146.0" prefHeight="36.0" prefWidth="258.0" style="-fx-background-color: grey;" text="" />
+            <Button fx:id="getTimeBtn2" layoutX="65.0" layoutY="203.0" mnemonicParsing="false" onAction="#getTimeBtn2Handler" text="计时3" />
+            <Label fx:id="lbTime2" layoutX="154.0" layoutY="200.0" prefHeight="36.0" prefWidth="258.0" style="-fx-background-color: grey;" text="" />
+            <Separator layoutX="491.0" layoutY="74.0" orientation="VERTICAL" prefHeight="200.0" />
+            <ChoiceBox fx:id="choice" layoutX="629.0" layoutY="128.0" prefHeight="36.0" prefWidth="57.0" />
+            <RadioButton fx:id="remind" layoutX="543.0" layoutY="85.0" mnemonicParsing="false" onAction="#remindHandler" text="定时提醒" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
