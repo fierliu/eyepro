@@ -72,6 +72,9 @@ public class Main extends Application {
 		primaryStage.setResizable(false);
 		primaryStage.setScene(scene);
 		primaryStage.hide();
+		Platform.setImplicitExit(false);
+		//系统托盘
+        enableTray(primaryStage);
 
 		Timer timer = new Timer();
         TimerTask  timerTask = new TimerTask (){
@@ -79,16 +82,15 @@ public class Main extends Application {
 //            	System.out.println(get_Time());
 //            	Platform.runLater(()->showTimedDialog(300000, "5 Min."));
 				if(get_Time().equals("30:00")){
-					Platform.runLater(()->showTimedDialog(120000, "2 Min."));
+					Platform.runLater(()->showTimedDialog(120000, "Beck & Neck."));
 				}else if(get_Time().equals("00:00")){
-					Platform.runLater(()->showTimedDialog(300000, "5 Min."));
+					Platform.runLater(()->showTimedDialog(300000, "Beck & Neck."));
 				}
             }
         };
         timer.schedule (timerTask, 0, 1000);
 
-		//系统托盘
-		enableTray(primaryStage);
+
 	}
 
 	public String get_Time() {
