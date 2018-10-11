@@ -91,7 +91,14 @@ public class Main extends Application {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					Platform.runLater(()->showTimedDialog(120000, "Beck & Neck."));
+					Platform.runLater(()->{
+						try {
+							showTimedDialog(120000, "Beck & Neck.");
+						} catch (ParserConfigurationException | SAXException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					});
 				}else if(get_Time().equals("00:00")){
 					try {
 						MusicPlay.playOnce("5 minutes.wav");
@@ -99,7 +106,14 @@ public class Main extends Application {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					Platform.runLater(()->showTimedDialog(300000, "Beck & Neck."));
+					Platform.runLater(()->{
+						try {
+							showTimedDialog(300000, "Beck & Neck.");
+						} catch (ParserConfigurationException | SAXException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					});
 				}
             }
         };
@@ -115,45 +129,49 @@ public class Main extends Application {
         time = format.format(date);
         return time;
 	}
-	public void showTimedDialog(long time, String message) {
-	    Stage popup = new Stage();
-	    popup.setAlwaysOnTop(true);
-	    popup.setResizable(false);
-	    popup.initModality(Modality.APPLICATION_MODAL);
-//	    popup.getIcons().add(new Image("/application/eye_tray.png"));
-	    Button closeBtn = new Button("Got it!");
-	    closeBtn.setOnAction(e -> {
-	        popup.close();
-	    });
-	    VBox root = new VBox();
-	    root.setPadding(new Insets(10));
-	    root.setAlignment(Pos.CENTER);//显示位置
-	    root.setSpacing(10);
-	    root.getChildren().addAll(new Label(message), closeBtn);
-	    Scene scene = new Scene(root);
-	    popup.setScene(scene);
-	    popup.setTitle("Rest & Check");
-	    Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-	    popup.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() - 180);
-	    popup.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() - 130);
-	    popup.setWidth(180);
-	    popup.setHeight(130);
-	    popup.show();
+	public void showTimedDialog(long time, String message)
+			throws ParserConfigurationException, SAXException, IOException {
+		PropertiesDAO pdao = new PropertiesDAO();
+		if(pdao.readPopUpSwitch()){
+			Stage popup = new Stage();
+		    popup.setAlwaysOnTop(true);
+		    popup.setResizable(false);
+		    popup.initModality(Modality.APPLICATION_MODAL);
+//		    popup.getIcons().add(new Image("/application/eye_tray.png"));
+		    Button closeBtn = new Button("Got it!");
+		    closeBtn.setOnAction(e -> {
+		        popup.close();
+		    });
+		    VBox root = new VBox();
+		    root.setPadding(new Insets(10));
+		    root.setAlignment(Pos.CENTER);//显示位置
+		    root.setSpacing(10);
+		    root.getChildren().addAll(new Label(message), closeBtn);
+		    Scene scene = new Scene(root);
+		    popup.setScene(scene);
+		    popup.setTitle("Rest & Check");
+		    Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+		    popup.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() - 180);
+		    popup.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() - 130);
+		    popup.setWidth(180);
+		    popup.setHeight(130);
+		    popup.show();
 
-	    Thread thread = new Thread(() -> {
-	        try {
-	            Thread.sleep(time);
-	            MusicPlay.playOnce("Devils_Never_Cry.wav");
-	            if (popup.isShowing()) {
-	                Platform.runLater(() ->
-	                popup.close());
-	            }
-	        } catch (Exception exp) {
-	            exp.printStackTrace();
-	        }
-	    });
-	    thread.setDaemon(true);
-	    thread.start();
+		    Thread thread = new Thread(() -> {
+		        try {
+		            Thread.sleep(time);
+		            MusicPlay.playOnce("Devils_Never_Cry.wav");
+		            if (popup.isShowing()) {
+		                Platform.runLater(() ->
+		                popup.close());
+		            }
+		        } catch (Exception exp) {
+		            exp.printStackTrace();
+		        }
+		    });
+		    thread.setDaemon(true);
+		    thread.start();
+		}
 	}
 
 	private void enableTray(final Stage stage) {
@@ -186,18 +204,15 @@ public class Main extends Application {
 						public void run() {
 							try {
 								Stage stage = new Stage();
-							stage.initModality(Modality.APPLICATION_MODAL);
-							FXMLLoader fxmlloader =
+								stage.initModality(Modality.APPLICATION_MODAL);
+								FXMLLoader fxmlloader =
 									new FXMLLoader(getClass().getResource("/application/properties.fxml"));
-							Parent root;
-
+								Parent root;
 								root = fxmlloader.load();
 								Scene scene = new Scene(root);
-//								PropertiesController pcontroller = fxmlloader.getController();
-								//传递Stage参数给Controller
-//								pcontroller.setStage(stage);
 								stage.setResizable(false);
 								stage.setScene(scene);
+								stage.setTitle("Properties");
 								stage.show();
 							} catch (IOException e) {
 								// TODO Auto-generated catch block

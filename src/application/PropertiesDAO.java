@@ -32,6 +32,18 @@ public class PropertiesDAO {
 		root = doc.getDocumentElement();
 //		System.out.print(root.getNodeName());
 	}
+//-----------------PopUp开关---------------------
+	public Boolean readPopUpSwitch(){
+		String swch = root.getElementsByTagName("popUpSwitch").item(0).getTextContent();
+        if(swch.equals("on")) {
+        	return true;
+        }
+        else return false;
+	}
+	public void writePopUpSwitch(String swth) {
+		root.getElementsByTagName("popUpSwitch").item(0).setTextContent(swth);
+		saveXml("config.xml", doc);
+	}
 //-----------------声音开关-----------------------
 	public Boolean readMusicSwich(){
 		String swch = root.getElementsByTagName("musicSwith").item(0).getTextContent();

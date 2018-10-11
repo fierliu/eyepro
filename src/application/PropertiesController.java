@@ -16,35 +16,32 @@ import javafx.scene.control.CheckBox;
 
 public class PropertiesController implements Initializable{
 	@FXML
-	private CheckBox CheckBoxPlaySound;
+	private CheckBox CheckBoxPlaySound, checkBoxPopUp;
 	PropertiesDAO pdao;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		try {
-			pdao = new PropertiesDAO();
-		} catch (ParserConfigurationException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (SAXException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+
+			try {
+				pdao = new PropertiesDAO();
+			} catch (ParserConfigurationException | SAXException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		checkBoxPopUp.setSelected(pdao.readPopUpSwitch());
 		CheckBoxPlaySound.setSelected(pdao.readMusicSwich());//初始化checkbox的选择值
 	}
 
-	public void checkBoxPlaySoundHandler(ActionEvent event) throws DocumentException, IOException, ParserConfigurationException, SAXException{
+	public void checkBoxPlaySoundHandler(ActionEvent event)
+			throws DocumentException, IOException, ParserConfigurationException, SAXException{
 		pdao = new PropertiesDAO();
-		if(CheckBoxPlaySound.isSelected()){
-//			System.out.println("selected");
-			pdao.writeMusicSound("on");
-		}
-		else{
-//			System.out.println("deselected");
-			pdao.writeMusicSound("off");
-		}
+		if(CheckBoxPlaySound.isSelected()) pdao.writeMusicSound("on");
+		else pdao.writeMusicSound("off");
+	}
+
+	public void checkBoxPopUpHandler(ActionEvent event)
+			throws ParserConfigurationException, SAXException, IOException{
+		pdao = new PropertiesDAO();
+		if(checkBoxPopUp.isSelected()) pdao.writePopUpSwitch("on");
+		else pdao.writePopUpSwitch("off");
 	}
 }

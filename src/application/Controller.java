@@ -1,16 +1,9 @@
 package application;
 
-
-import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
-
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.dom4j.DocumentException;
-import org.xml.sax.SAXException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <properties>
 	<breakTime>36000</breakTime>
-	<flag>0</flag>
+	<popUpSwitch>on</popUpSwitch>
 	<noticeWord>test</noticeWord>
 	<musicSwith>on</musicSwith>
 </properties>
