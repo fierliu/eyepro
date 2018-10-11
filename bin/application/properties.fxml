@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="522.0" prefWidth="344.0" xmlns:fx="http://javafx.com/fxml/1"
+	xmlns="http://javafx.com/javafx/8" fx:controller="application.PropertiesController">
+   <children>
+      <VBox prefHeight="515.0" prefWidth="344.0">
+         <children>
+            <CheckBox fx:id="CheckBoxPlaySound" mnemonicParsing="false" text="PlaySound"
+            	onAction="#checkBoxPlaySoundHandler"/>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

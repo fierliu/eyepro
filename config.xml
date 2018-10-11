@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <properties>
-	<entry key="flag">0</entry>
-	<entry key="breakTime">3600000</entry>
-	<entry key="noticeWord"></entry>
+	<breakTime>36000</breakTime>
+	<flag>0</flag>
+	<noticeWord>test</noticeWord>
+	<musicSwith>on</musicSwith>
 </properties>

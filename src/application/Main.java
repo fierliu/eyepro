@@ -18,11 +18,14 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.dom4j.DocumentException;
+import org.xml.sax.SAXException;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -82,8 +85,20 @@ public class Main extends Application {
 //            	System.out.println(get_Time());
 //            	Platform.runLater(()->showTimedDialog(300000, "5 Min."));
 				if(get_Time().equals("30:00")){
+					try {
+						MusicPlay.playOnce("2 minutes.wav");
+					} catch (ParserConfigurationException | SAXException | IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					Platform.runLater(()->showTimedDialog(120000, "Beck & Neck."));
 				}else if(get_Time().equals("00:00")){
+					try {
+						MusicPlay.playOnce("5 minutes.wav");
+					} catch (ParserConfigurationException | SAXException | IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					Platform.runLater(()->showTimedDialog(300000, "Beck & Neck."));
 				}
             }
@@ -128,8 +143,10 @@ public class Main extends Application {
 	    Thread thread = new Thread(() -> {
 	        try {
 	            Thread.sleep(time);
+	            MusicPlay.playOnce("Devils_Never_Cry.wav");
 	            if (popup.isShowing()) {
-	                Platform.runLater(() -> popup.close());
+	                Platform.runLater(() ->
+	                popup.close());
 	            }
 	        } catch (Exception exp) {
 	            exp.printStackTrace();
@@ -142,7 +159,7 @@ public class Main extends Application {
 	private void enableTray(final Stage stage) {
 		PopupMenu popupMenu = new PopupMenu();
 		java.awt.MenuItem openItem = new java.awt.MenuItem("Show");
-		java.awt.MenuItem hideItem = new java.awt.MenuItem("Hide");
+		java.awt.MenuItem hideItem = new java.awt.MenuItem("Properties");
 		java.awt.MenuItem quitItem = new java.awt.MenuItem("Exit");
 		ActionListener acl = new ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -163,11 +180,29 @@ public class Main extends Application {
 						}
 					});
 				}
-				if (item.getLabel().equals("Hide")) {
+				if (item.getLabel().equals("Properties")) {
 					Platform.runLater(new Runnable() {
 						@Override
 						public void run() {
-							stage.hide();
+							try {
+								Stage stage = new Stage();
+							stage.initModality(Modality.APPLICATION_MODAL);
+							FXMLLoader fxmlloader =
+									new FXMLLoader(getClass().getResource("/application/properties.fxml"));
+							Parent root;
+
+								root = fxmlloader.load();
+								Scene scene = new Scene(root);
+//								PropertiesController pcontroller = fxmlloader.getController();
+								//传递Stage参数给Controller
+//								pcontroller.setStage(stage);
+								stage.setResizable(false);
+								stage.setScene(scene);
+								stage.show();
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 						}
 					});
 				}

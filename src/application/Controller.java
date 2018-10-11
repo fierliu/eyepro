@@ -1,10 +1,16 @@
 package application;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.dom4j.DocumentException;
+import org.xml.sax.SAXException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,7 +39,6 @@ public class Controller implements Initializable{
 	private Stage stage;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-
 	}
 	public void setStage(Stage stage){
 		this.stage = stage;
