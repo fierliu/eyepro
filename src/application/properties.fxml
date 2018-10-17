@@ -9,10 +9,27 @@
    <children>
       <VBox prefHeight="515.0" prefWidth="344.0">
          <children>
-            <CheckBox fx:id="CheckBoxPlaySound" mnemonicParsing="false"
-            	onAction="#checkBoxPlaySoundHandler" text="PlaySound" />
-            <CheckBox fx:id="checkBoxPopUp" mnemonicParsing="false"
-            	onAction="#checkBoxPopUpHandler" text="ShowPopUp" />
+            <CheckBox fx:id="checkBoxPopUp" mnemonicParsing="false" onAction="#checkBoxPopUpHandler" text="ShowPopUp" />
+            <Label text="Sound Switch" />
+            <VBox prefHeight="86.0" prefWidth="344.0">
+               <children>
+                 	<RadioButton fx:id="radioBtnPlayMusic" mnemonicParsing="false" onAction="#radioBtnPlayMusicHandler" text="PlayMusic">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="group" />
+                     </toggleGroup>
+                  </RadioButton>
+                 	<RadioButton fx:id="radioBtnPlayTTS" mnemonicParsing="false" onAction="#radioBtnPlayTTSHandler" text="PlayTTS" toggleGroup="$group" />
+                 	<RadioButton fx:id="radioBtnSilence" mnemonicParsing="false" onAction="#radioBtnSilenceHandler" text="Silence" toggleGroup="$group" />
+               </children>
+            </VBox>
+            <Label text="Notice Word" />
+            <HBox prefHeight="69.0" prefWidth="344.0">
+               <children>
+                  <TextField fx:id="textFieldNoticeWord" promptText="Input Notice Word" />
+                  <Button fx:id="btnNoticeWord" mnemonicParsing="false" onAction="#btnNoticeWordHandler" text="Confirm" />
+                  <Label fx:id="lbNoticeWord" prefHeight="38.0" prefWidth="39.0" />
+               </children>
+            </HBox>
          </children>
       </VBox>
    </children>

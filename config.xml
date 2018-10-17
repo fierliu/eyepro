@@ -2,6 +2,7 @@
 <properties>
 	<breakTime>36000</breakTime>
 	<popUpSwitch>on</popUpSwitch>
-	<noticeWord>test</noticeWord>
+	<noticeWord>别人的快乐| Beck/Neck</noticeWord>
 	<musicSwith>on</musicSwith>
+	<TTSSwitch>off</TTSSwitch>
 </properties>

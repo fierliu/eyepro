@@ -27,7 +27,6 @@ import javafx.application.Application;
 import javafx.application.Platform;
 
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
 import javafx.geometry.Insets;
@@ -48,10 +47,13 @@ import javafx.scene.layout.VBox;
 public class Main extends Application {
 	public String time;
 	private TrayIcon trayIcon;
-	@FXML
 
-	public void init(){
-
+	public void init() throws ParserConfigurationException, SAXException, IOException{
+		PropertiesDAO pdao = new PropertiesDAO();
+		Switch.setPopUpSwitch(pdao.readPopUpSwitch());
+		Switch.setMusicSwitch(pdao.readMusicSwich());
+		Switch.setTTSSwitch(pdao.readTTSSwitch());
+		Switch.setNoticeWord(pdao.readNoticeWord());
 	}
 	@Override
 	public void start(Stage primaryStage) throws IOException, DocumentException {
@@ -84,8 +86,10 @@ public class Main extends Application {
             public void run() {
 //            	System.out.println(get_Time());
 //            	Platform.runLater(()->showTimedDialog(300000, "5 Min."));
+//            	-----------半点提醒--------------------------------------------
 				if(get_Time().equals("30:00")){
 					try {
+						TTSPlay.playTTS("It's "+ GetTime.getSharpAndHalfTime() +"now.");
 						MusicPlay.playOnce("2 minutes.wav");
 					} catch (ParserConfigurationException | SAXException | IOException e) {
 						// TODO Auto-generated catch block
@@ -93,14 +97,16 @@ public class Main extends Application {
 					}
 					Platform.runLater(()->{
 						try {
-							showTimedDialog(120000, "Beck & Neck.");
+							showTimedDialog(120000, Switch.getNoticeWord());
 						} catch (ParserConfigurationException | SAXException | IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 					});
+//					-------------整点提醒-------------------------
 				}else if(get_Time().equals("00:00")){
 					try {
+						TTSPlay.playTTS("It's "+ GetTime.getSharpAndHalfTime() +"now.");
 						MusicPlay.playOnce("5 minutes.wav");
 					} catch (ParserConfigurationException | SAXException | IOException e) {
 						// TODO Auto-generated catch block
@@ -108,7 +114,7 @@ public class Main extends Application {
 					}
 					Platform.runLater(()->{
 						try {
-							showTimedDialog(300000, "Beck & Neck.");
+							showTimedDialog(300000, Switch.getNoticeWord());
 						} catch (ParserConfigurationException | SAXException | IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -131,8 +137,7 @@ public class Main extends Application {
 	}
 	public void showTimedDialog(long time, String message)
 			throws ParserConfigurationException, SAXException, IOException {
-		PropertiesDAO pdao = new PropertiesDAO();
-		if(pdao.readPopUpSwitch()){
+		if(Switch.isPopUpSwitch()){
 			Stage popup = new Stage();
 		    popup.setAlwaysOnTop(true);
 		    popup.setResizable(false);
@@ -160,6 +165,7 @@ public class Main extends Application {
 		    Thread thread = new Thread(() -> {
 		        try {
 		            Thread.sleep(time);
+		            TTSPlay.playTTS("Time's up!");
 		            MusicPlay.playOnce("Devils_Never_Cry.wav");
 		            if (popup.isShowing()) {
 		                Platform.runLater(() ->

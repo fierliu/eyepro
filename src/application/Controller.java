@@ -9,9 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
 import javafx.stage.Stage;
 
 public class Controller implements Initializable{
@@ -23,11 +21,7 @@ public class Controller implements Initializable{
 	@FXML
 	private Label lbTime2;
 	@FXML
-	private Button btn, btnQuit;
-	@FXML
-	private ChoiceBox<Integer> choice;
-	@FXML
-	private RadioButton remind;
+	private Button btnQuit, getTimeBtn, getTimeBtn1, getTimeBtn2;
 	@SuppressWarnings("unused")
 	private Stage stage;
 	@Override
@@ -36,9 +30,7 @@ public class Controller implements Initializable{
 	public void setStage(Stage stage){
 		this.stage = stage;
 	}
-	public void setLabel(String s){
-		lbTime.setText(s);
-	}
+
 	public void getTimeBtn2Handler(ActionEvent event){
 		lbTime2.setText(showTime());
 	}
@@ -46,7 +38,7 @@ public class Controller implements Initializable{
 		lbTime1.setText(showTime());
 	}
 	public void getTimeBtnHandler(ActionEvent event){
-		setLabel(showTime());
+		lbTime.setText(showTime());
 	}
 
 	public void btnQuitHandler(ActionEvent event){

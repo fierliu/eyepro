@@ -58,6 +58,29 @@ public class PropertiesDAO {
 		root.getElementsByTagName("musicSwith").item(0).setTextContent(swth);
 		saveXml("config.xml", doc);
 	}
+//---------------tts开关------------------------
+	public Boolean readTTSSwitch(){
+		String swch = root.getElementsByTagName("TTSSwitch").item(0).getTextContent();
+//		System.out.print(swch);
+
+        if(swch.equals("on")) {
+        	return true;
+        }
+        else return false;
+	}
+	public void writeTTSSwitch(String swth) {
+		root.getElementsByTagName("TTSSwitch").item(0).setTextContent(swth);
+		saveXml("config.xml", doc);
+	}
+//---------------提醒文字-------------------------
+	public String readNoticeWord(){
+		String word = root.getElementsByTagName("noticeWord").item(0).getTextContent();
+		return word;
+	}
+	public void writeNoticeWord(String word){
+		root.getElementsByTagName("noticeWord").item(0).setTextContent(word);
+		saveXml("config.xml", doc);
+	}
 
     public static void saveXml(String fileName, Document doc) {//将Document输出到文件
         TransformerFactory transFactory=TransformerFactory.newInstance();
