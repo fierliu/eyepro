@@ -3,6 +3,8 @@
 	<breakTime>36000</breakTime>
 	<popUpSwitch>on</popUpSwitch>
 	<noticeWord>别人的快乐| Beck/Neck</noticeWord>
-	<musicSwith>on</musicSwith>
-	<TTSSwitch>off</TTSSwitch>
+	<musicSwith>off</musicSwith>
+	<TTSSwitch>on</TTSSwitch>
+	<dayCountDown>2019-04-03</dayCountDown>
+	<mission>work</mission>
 </properties>

@@ -1,6 +1,7 @@
 package application;
 
 import java.net.URL;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -19,13 +20,27 @@ public class Controller implements Initializable{
 	@FXML
 	private Label lbTime1;
 	@FXML
-	private Label lbTime2;
+	private Label lbTime2, lbCountDown, lbCountDownTitle;
 	@FXML
 	private Button btnQuit, getTimeBtn, getTimeBtn1, getTimeBtn2;
 	@SuppressWarnings("unused")
 	private Stage stage;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		//count down handler
+		if(Switch.getDayCountDown() != ""){
+			lbCountDownTitle.setText("Count Down");
+			try {
+				lbCountDown.setText(GetTime.getDifferenceDays(Switch.getDayCountDown())
+						+ " days away from the " + Switch.getMission());
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else{
+			lbCountDown.setText("");
+			lbCountDownTitle.setText("");
+		}
 	}
 	public void setStage(Stage stage){
 		this.stage = stage;
@@ -45,6 +60,10 @@ public class Controller implements Initializable{
 		System.exit(0);
 	}
 
+	public void lbCountDownHandler(ActionEvent event){
+
+
+	}
 	public String showTime(){
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 		String nowTime = df.format(new Date());// new Date()为获取当前系统时间

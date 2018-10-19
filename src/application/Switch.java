@@ -5,6 +5,20 @@ public class Switch {
 	private static boolean musicSwitch;
 	private static boolean TTSSwitch;
 	private static String noticeWord;
+	private static String dayCountDown;
+	private static String mission;
+	public static String getMission() {
+		return mission;
+	}
+	public static void setMission(String mission) {
+		Switch.mission = mission;
+	}
+	public static String getDayCountDown() {
+		return dayCountDown;
+	}
+	public static void setDayCountDown(String dayCountDown) {
+		Switch.dayCountDown = dayCountDown;
+	}
 	public static boolean isPopUpSwitch(){
 		return popUpSwitch;
 	}

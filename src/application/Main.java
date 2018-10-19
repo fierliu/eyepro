@@ -54,6 +54,8 @@ public class Main extends Application {
 		Switch.setMusicSwitch(pdao.readMusicSwich());
 		Switch.setTTSSwitch(pdao.readTTSSwitch());
 		Switch.setNoticeWord(pdao.readNoticeWord());
+		Switch.setDayCountDown(pdao.readDayCountDown());
+		Switch.setMission(pdao.readMission());
 	}
 	@Override
 	public void start(Stage primaryStage) throws IOException, DocumentException {
@@ -89,34 +91,32 @@ public class Main extends Application {
 //            	-----------半点提醒--------------------------------------------
 				if(get_Time().equals("30:00")){
 					try {
+						//In some os, tts may cause error!
 						TTSPlay.playTTS("It's "+ GetTime.getSharpAndHalfTime() +"now.");
 						MusicPlay.playOnce("2 minutes.wav");
 					} catch (ParserConfigurationException | SAXException | IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					Platform.runLater(()->{
 						try {
 							showTimedDialog(120000, Switch.getNoticeWord());
 						} catch (ParserConfigurationException | SAXException | IOException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 					});
 //					-------------整点提醒-------------------------
 				}else if(get_Time().equals("00:00")){
 					try {
+						//In some os, tts may cause error!
 						TTSPlay.playTTS("It's "+ GetTime.getSharpAndHalfTime() +"now.");
 						MusicPlay.playOnce("5 minutes.wav");
 					} catch (ParserConfigurationException | SAXException | IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					Platform.runLater(()->{
 						try {
 							showTimedDialog(300000, Switch.getNoticeWord());
 						} catch (ParserConfigurationException | SAXException | IOException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 					});
@@ -165,7 +165,7 @@ public class Main extends Application {
 		    Thread thread = new Thread(() -> {
 		        try {
 		            Thread.sleep(time);
-		            TTSPlay.playTTS("Time's up!");
+		            TTSPlay.playTTS("Time's up!");//In some os, tts may cause error!
 		            MusicPlay.playOnce("Devils_Never_Cry.wav");
 		            if (popup.isShowing()) {
 		                Platform.runLater(() ->
@@ -221,7 +221,6 @@ public class Main extends Application {
 								stage.setTitle("Properties");
 								stage.show();
 							} catch (IOException e) {
-								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
 						}
@@ -233,7 +232,6 @@ public class Main extends Application {
 		MouseListener sj = new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 				Platform.setImplicitExit(false); //多次使用显示和隐藏设置false
 				if (e.getClickCount() == 2) {
 					if (stage.isShowing()) {
@@ -255,23 +253,15 @@ public class Main extends Application {
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-
 			}
 		};
 

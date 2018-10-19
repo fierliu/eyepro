@@ -81,7 +81,24 @@ public class PropertiesDAO {
 		root.getElementsByTagName("noticeWord").item(0).setTextContent(word);
 		saveXml("config.xml", doc);
 	}
-
+//-----------------dayCountDown--------------------
+	public String readDayCountDown(){
+		String days = root.getElementsByTagName("dayCountDown").item(0).getTextContent();
+		return days;
+	}
+	public void writeDayCountDown(String days){
+		root.getElementsByTagName("dayCountDown").item(0).setTextContent(days);
+		saveXml("config.xml", doc);
+	}
+//-------------------mission-----------------------------
+	public String readMission(){
+		String days = root.getElementsByTagName("mission").item(0).getTextContent();
+		return days;
+	}
+	public void writeMission(String mission){
+		root.getElementsByTagName("mission").item(0).setTextContent(mission);
+		saveXml("config.xml", doc);
+	}
     public static void saveXml(String fileName, Document doc) {//将Document输出到文件
         TransformerFactory transFactory=TransformerFactory.newInstance();
         try {
