@@ -81,7 +81,8 @@ public class MusicPlay {
 //    public static void main(String[] args)
     public static void playOnce(String musicName) throws ParserConfigurationException, SAXException, IOException
     {
-    	if(Switch.isMusicSwitch()){
+    	PropertiesDAO pd = new PropertiesDAO();
+    	if(pd.readMusicSwich()){
     		String path = System.getProperty("user.dir")+"\\Music\\"+ musicName;
 //        	System.out.println(path);
             URL url = null;

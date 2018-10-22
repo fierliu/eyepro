@@ -99,6 +99,7 @@ public class PropertiesDAO {
 		root.getElementsByTagName("mission").item(0).setTextContent(mission);
 		saveXml("config.xml", doc);
 	}
+
     public static void saveXml(String fileName, Document doc) {//将Document输出到文件
         TransformerFactory transFactory=TransformerFactory.newInstance();
         try {

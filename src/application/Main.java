@@ -1,5 +1,8 @@
 package application;
-
+/*
+ * 占用内存300多M，是不是跟把数据存在Switch的静态变量中有关？
+ * 重新改一个不需要Switch开关的版本，再看占内存的情况。
+ */
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
 
@@ -49,13 +52,7 @@ public class Main extends Application {
 	private TrayIcon trayIcon;
 
 	public void init() throws ParserConfigurationException, SAXException, IOException{
-		PropertiesDAO pdao = new PropertiesDAO();
-		Switch.setPopUpSwitch(pdao.readPopUpSwitch());
-		Switch.setMusicSwitch(pdao.readMusicSwich());
-		Switch.setTTSSwitch(pdao.readTTSSwitch());
-		Switch.setNoticeWord(pdao.readNoticeWord());
-		Switch.setDayCountDown(pdao.readDayCountDown());
-		Switch.setMission(pdao.readMission());
+
 	}
 	@Override
 	public void start(Stage primaryStage) throws IOException, DocumentException {
@@ -99,7 +96,8 @@ public class Main extends Application {
 					}
 					Platform.runLater(()->{
 						try {
-							showTimedDialog(120000, Switch.getNoticeWord());
+							PropertiesDAO pd = new PropertiesDAO();
+							showTimedDialog(120000, pd.readNoticeWord());
 						} catch (ParserConfigurationException | SAXException | IOException e) {
 							e.printStackTrace();
 						}
@@ -115,7 +113,8 @@ public class Main extends Application {
 					}
 					Platform.runLater(()->{
 						try {
-							showTimedDialog(300000, Switch.getNoticeWord());
+							PropertiesDAO pd = new PropertiesDAO();
+							showTimedDialog(300000, pd.readNoticeWord());
 						} catch (ParserConfigurationException | SAXException | IOException e) {
 							e.printStackTrace();
 						}
@@ -137,7 +136,8 @@ public class Main extends Application {
 	}
 	public void showTimedDialog(long time, String message)
 			throws ParserConfigurationException, SAXException, IOException {
-		if(Switch.isPopUpSwitch()){
+		PropertiesDAO pd = new PropertiesDAO();
+		if(pd.readPopUpSwitch()){
 			Stage popup = new Stage();
 		    popup.setAlwaysOnTop(true);
 		    popup.setResizable(false);

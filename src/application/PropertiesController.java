@@ -83,11 +83,9 @@ public class PropertiesController implements Initializable{
 		pdao = new PropertiesDAO();
 		if(checkBoxPopUp.isSelected()){
 			pdao.writePopUpSwitch("on");
-			Switch.setPopUpSwitch(true);
 		}
 		else{
 			pdao.writePopUpSwitch("off");
-			Switch.setPopUpSwitch(false);
 		}
 	}
 
@@ -96,12 +94,9 @@ public class PropertiesController implements Initializable{
 		pdao = new PropertiesDAO();
 		if(radioBtnPlayMusic.isSelected()){
 			pdao.writeMusicSound("on");
-			Switch.setMusicSwitch(true);
 			pdao.writeTTSSwitch("off");
-			Switch.setTTSSwitch(false);
 		}else{
 			pdao.writeMusicSound("off");
-			Switch.setMusicSwitch(false);
 		}
 	}
 
@@ -109,12 +104,9 @@ public class PropertiesController implements Initializable{
 		pdao = new PropertiesDAO();
 		if(radioBtnPlayTTS.isSelected()){
 			pdao.writeTTSSwitch("on");
-			Switch.setTTSSwitch(true);
 			pdao.writeMusicSound("off");
-			Switch.setMusicSwitch(false);
 		}else{
 			pdao.writeTTSSwitch("off");
-			Switch.setTTSSwitch(false);
 		}
 	}
 
@@ -122,16 +114,13 @@ public class PropertiesController implements Initializable{
 		pdao = new PropertiesDAO();
 		if(radioBtnSilence.isSelected()){
 			pdao.writeMusicSound("off");
-			Switch.setMusicSwitch(false);
 			pdao.writeTTSSwitch("off");
-			Switch.setTTSSwitch(false);
 		}
 	}
 
 	public void btnNoticeWordHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
 		pdao = new PropertiesDAO();
 		pdao.writeNoticeWord(textFieldNoticeWord.getText());
-		Switch.setNoticeWord(textFieldNoticeWord.getText());
 		lbNoticeWord.setText("Submitted.");
 	}
 
@@ -166,14 +155,12 @@ public class PropertiesController implements Initializable{
 
 		pdao = new PropertiesDAO();
 		pdao.writeDayCountDown(s.toString());
-		Switch.setDayCountDown(s.toString());
 		lbNoticeMissionDate.setText("Submitted, this will go into effect after the program restart.");
 	}
 
 	public void btnMissionNameHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
 		pdao = new PropertiesDAO();
 		pdao.writeMission(textFieldMission.getText());
-		Switch.setMission(textFieldMission.getText());
 		lbNoticeMission.setText("Submitted, this will go into effect after the program restart.");
 	}
 

@@ -1,10 +1,15 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,19 +33,28 @@ public class Controller implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//count down handler
-		if(Switch.getDayCountDown() != ""){
-			lbCountDownTitle.setText("Count Down");
-			try {
-				lbCountDown.setText(GetTime.getDifferenceDays(Switch.getDayCountDown())
-						+ " days away from the " + Switch.getMission());
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		PropertiesDAO pd;
+		try {
+			pd = new PropertiesDAO();
+			if(pd.readDayCountDown() != ""){
+				lbCountDownTitle.setText("Count Down");
+				try {
+
+					lbCountDown.setText(GetTime.getDifferenceDays(pd.readDayCountDown())
+							+ " days away from " + pd.readMission());
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}else{
+				lbCountDown.setText("");
+				lbCountDownTitle.setText("");
 			}
-		}else{
-			lbCountDown.setText("");
-			lbCountDownTitle.setText("");
+		} catch (ParserConfigurationException | SAXException | IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
+
 	}
 	public void setStage(Stage stage){
 		this.stage = stage;
