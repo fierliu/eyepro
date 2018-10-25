@@ -1,11 +1,10 @@
 package application;
 /*
- * 占用内存300多M，是不是跟把数据存在Switch的静态变量中有关？
- * 重新改一个不需要Switch开关的版本，再看占内存的情况。
+
+ * 另外PopUp占用的内存也有点高，是否能改用其他形式进行优化？
  */
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
-
 import java.awt.TrayIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -13,7 +12,6 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 import java.io.IOException;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,17 +19,17 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
+import javax.media.NoPlayerException;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.xml.parsers.ParserConfigurationException;
-
 import org.dom4j.DocumentException;
 import org.xml.sax.SAXException;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
@@ -39,12 +37,10 @@ import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-
 import javafx.scene.layout.VBox;
 
 public class Main extends Application {
@@ -86,36 +82,28 @@ public class Main extends Application {
 //            	System.out.println(get_Time());
 //            	Platform.runLater(()->showTimedDialog(300000, "5 Min."));
 //            	-----------半点提醒--------------------------------------------
-				if(get_Time().equals("30:00")){
-					try {
-						//In some os, tts may cause error!
-						TTSPlay.playTTS("It's "+ GetTime.getSharpAndHalfTime() +"now.");
-						MusicPlay.playOnce("2 minutes.wav");
-					} catch (ParserConfigurationException | SAXException | IOException e) {
-						e.printStackTrace();
-					}
+				if(get_Time().equals("30:00")){					
 					Platform.runLater(()->{
 						try {
-							PropertiesDAO pd = new PropertiesDAO();
-							showTimedDialog(120000, pd.readNoticeWord());
-						} catch (ParserConfigurationException | SAXException | IOException e) {
+							PropertiesDAO p = new PropertiesDAO();
+							if(p.readPopUpSwitch()) showTimedDialog(120000, p.readNoticeWord());						
+							if(p.readMusicSwich()) MusicPlay.playOnce("2 minutes.wav");
+						} catch (ParserConfigurationException | SAXException | IOException | 
+								NoPlayerException | InterruptedException | 
+								UnsupportedAudioFileException | LineUnavailableException e) {
 							e.printStackTrace();
 						}
 					});
 //					-------------整点提醒-------------------------
 				}else if(get_Time().equals("00:00")){
-					try {
-						//In some os, tts may cause error!
-						TTSPlay.playTTS("It's "+ GetTime.getSharpAndHalfTime() +"now.");
-						MusicPlay.playOnce("5 minutes.wav");
-					} catch (ParserConfigurationException | SAXException | IOException e) {
-						e.printStackTrace();
-					}
 					Platform.runLater(()->{
 						try {
-							PropertiesDAO pd = new PropertiesDAO();
-							showTimedDialog(300000, pd.readNoticeWord());
-						} catch (ParserConfigurationException | SAXException | IOException e) {
+							PropertiesDAO p = new PropertiesDAO();
+							if(p.readPopUpSwitch()) showTimedDialog(300000, p.readNoticeWord());							
+							if(p.readMusicSwich()) MusicPlay.playOnce("5 minutes.wav");
+						} catch (ParserConfigurationException | SAXException | IOException |
+								NoPlayerException | InterruptedException | 
+								UnsupportedAudioFileException | LineUnavailableException e) {
 							e.printStackTrace();
 						}
 					});
@@ -123,8 +111,6 @@ public class Main extends Application {
             }
         };
         timer.schedule (timerTask, 0, 1000);
-
-
 	}
 
 	public String get_Time() {
@@ -136,48 +122,45 @@ public class Main extends Application {
 	}
 	public void showTimedDialog(long time, String message)
 			throws ParserConfigurationException, SAXException, IOException {
-		PropertiesDAO pd = new PropertiesDAO();
-		if(pd.readPopUpSwitch()){
-			Stage popup = new Stage();
-		    popup.setAlwaysOnTop(true);
-		    popup.setResizable(false);
-		    popup.initModality(Modality.APPLICATION_MODAL);
+		Stage popup = new Stage();
+	    popup.setAlwaysOnTop(true);
+	    popup.setResizable(false);
+	    popup.initModality(Modality.APPLICATION_MODAL);
 //		    popup.getIcons().add(new Image("/application/eye_tray.png"));
-		    Button closeBtn = new Button("Got it!");
-		    closeBtn.setOnAction(e -> {
-		        popup.close();
-		    });
-		    VBox root = new VBox();
-		    root.setPadding(new Insets(10));
-		    root.setAlignment(Pos.CENTER);//显示位置
-		    root.setSpacing(10);
-		    root.getChildren().addAll(new Label(message), closeBtn);
-		    Scene scene = new Scene(root);
-		    popup.setScene(scene);
-		    popup.setTitle("Rest & Check");
-		    Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-		    popup.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() - 180);
-		    popup.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() - 130);
-		    popup.setWidth(180);
-		    popup.setHeight(130);
-		    popup.show();
+	    Button closeBtn = new Button("Got it!");
+	    closeBtn.setOnAction(e -> {
+	        popup.close();
+	    });
+	    VBox root = new VBox();
+	    root.setPadding(new Insets(10));
+	    root.setAlignment(Pos.CENTER);//显示位置
+	    root.setSpacing(10);
+	    root.getChildren().addAll(new Label(message), closeBtn);
+	    Scene scene = new Scene(root);
+	    popup.setScene(scene);
+	    popup.setTitle("Rest & Check");
+	    Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+	    popup.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() - 180);
+	    popup.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() - 130);
+	    popup.setWidth(180);
+	    popup.setHeight(130);
+	    popup.show();
 
-		    Thread thread = new Thread(() -> {
-		        try {
-		            Thread.sleep(time);
-		            TTSPlay.playTTS("Time's up!");//In some os, tts may cause error!
-		            MusicPlay.playOnce("Devils_Never_Cry.wav");
-		            if (popup.isShowing()) {
-		                Platform.runLater(() ->
-		                popup.close());
-		            }
-		        } catch (Exception exp) {
-		            exp.printStackTrace();
-		        }
-		    });
-		    thread.setDaemon(true);
-		    thread.start();
-		}
+	    Thread thread = new Thread(() -> {
+	        try {	        	
+	            Thread.sleep(time);
+	            PropertiesDAO p = new PropertiesDAO();
+	            if(p.readMusicSwich()) MusicPlay.playOnce("Devils_Never_Cry.wav");
+	            if (popup.isShowing()) {
+	                Platform.runLater(() ->
+	                popup.close());
+	            }
+	        } catch (Exception exp) {
+	            exp.printStackTrace();
+	        }
+	    });
+	    thread.setDaemon(true);
+	    thread.start();
 	}
 
 	private void enableTray(final Stage stage) {

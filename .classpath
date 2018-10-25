@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/IT/XML/dom4j-1.6.1/lib/jaxen-1.1-beta-6.jar"/>
-	<classpathentry kind="lib" path="D:/IT/XML/dom4j-1.6.1/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="D:/IT/GUI/EyePro Lib/freetts-1.2/lib/cmu_time_awb.jar"/>
-	<classpathentry kind="lib" path="D:/IT/GUI/EyePro Lib/freetts-1.2/lib/cmu_us_kal.jar"/>
-	<classpathentry kind="lib" path="D:/IT/GUI/EyePro Lib/freetts-1.2/lib/cmudict04.jar"/>
-	<classpathentry kind="lib" path="D:/IT/GUI/EyePro Lib/freetts-1.2/lib/cmulex.jar"/>
-	<classpathentry kind="lib" path="D:/IT/GUI/EyePro Lib/freetts-1.2/lib/cmutimelex.jar"/>
-	<classpathentry kind="lib" path="D:/IT/GUI/EyePro Lib/freetts-1.2/lib/en_us.jar"/>
-	<classpathentry kind="lib" path="D:/IT/GUI/EyePro Lib/freetts-1.2/lib/freetts.jar"/>
-	<classpathentry kind="lib" path="D:/IT/GUI/EyePro Lib/freetts-1.2/lib/freetts-jsapi10.jar"/>
-	<classpathentry kind="lib" path="D:/IT/GUI/EyePro Lib/freetts-1.2/lib/jsapi.jar"/>
-	<classpathentry kind="lib" path="D:/IT/GUI/EyePro Lib/freetts-1.2/lib/mbrola.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/jmf-2.1.1e.jar"/>
+	<classpathentry kind="lib" path="lib/customizer.jar"/>
+	<classpathentry kind="lib" path="lib/jmf.jar"/>
+	<classpathentry kind="lib" path="lib/mediaplayer.jar"/>
+	<classpathentry kind="lib" path="lib/multiplayer.jar"/>
+	<classpathentry kind="lib" path="lib/sound.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

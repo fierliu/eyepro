@@ -1,107 +1,59 @@
 package application;
+import java.io.File;
 // 文件名:MuiscPlay.java
-import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.io.IOException;
 
-import javax.xml.parsers.ParserConfigurationException;
+import javax.media.NoPlayerException;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.SourceDataLine;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
-import org.xml.sax.SAXException;
+/*
+ * 
+ */
 
-import sun.audio.*;
-/**
-*
-* @author wuhuiwen
-* 播放音频文件，产生音效
-*/
 public class MusicPlay {
-    private AudioStream  as; //单次播放声音用
-    ContinuousAudioDataStream cas;//循环播放声音
-    // 构造函数
-    public MusicPlay(URL url)
-    {
-        try {
-            //打开一个声音文件流作为输入
-            as = new AudioStream (url.openStream());
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-    // 一次播放 开始
-    public void start()
-    {
-        if( as==null ){
-            System.out.println("AudioStream object is not created!");
-            return;
-        }else{
-            AudioPlayer.player.start (as);
-        }
-    }
-    // 一次播放 停止
-    public void stop()
-    {
-        if( as==null ){
-            System.out.println("AudioStream object is not created!");
-            return;
-        }else{
-            AudioPlayer.player.stop(as);
-        }
-    }
-    // 循环播放 开始
-    public void continuousStart()
-    {
-        // Create AudioData source.
-        AudioData data = null;
-        try {
-            data = as.getData();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+	
+    public static void playOnce(String musicName) throws NoPlayerException, IOException, 
+    InterruptedException, UnsupportedAudioFileException, IOException, LineUnavailableException {
+    	String musicFile = System.getProperty("user.dir") + "\\music\\" + musicName;
+//    	System.out.println(musicFile);
+  // 获取音频输入流
+    	AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(
+    			new File(FilePathUtil.getFilePath(musicFile)));
+  // 获取音频编码对象
+    	AudioFormat audioFormat = audioInputStream.getFormat();
 
-        // Create ContinuousAudioDataStream.
-        cas = new ContinuousAudioDataStream (data);
+  // 设置数据输入
+		DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class,
+	    audioFormat, AudioSystem.NOT_SPECIFIED);
+		SourceDataLine sourceDataLine = (SourceDataLine) AudioSystem.getLine(dataLineInfo);
+		sourceDataLine.open(audioFormat);
+		sourceDataLine.start();
+	
+  /*
+   * 从输入流中读取数据发送到混音器
+   */
+		int count;
+		byte tempBuffer[] = new byte[1024];
+		while ((count = audioInputStream.read(tempBuffer, 0, tempBuffer.length)) != -1) {
+			if (count > 0) {
+				sourceDataLine.write(tempBuffer, 0, count);
+			}
+		}
 
-        // Play audio.
-        AudioPlayer.player.start(cas);
-    }
-    // 循环播放 停止
-    public void continuousStop()
-    {
-        if(cas != null)
-        {
-            AudioPlayer.player.stop (cas);
-        }
+  // 清空数据缓冲,并关闭输入
+		sourceDataLine.drain();
+		sourceDataLine.close();
     }
 
-//    public static void main(String[] args)
-    public static void playOnce(String musicName) throws ParserConfigurationException, SAXException, IOException
-    {
-    	PropertiesDAO pd = new PropertiesDAO();
-    	if(pd.readMusicSwich()){
-    		String path = System.getProperty("user.dir")+"\\Music\\"+ musicName;
-//        	System.out.println(path);
-            URL url = null;
-            try {
-                url = new URL("file:///"+ path);
-            } catch (MalformedURLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            MusicPlay musicPlay=new MusicPlay(url);
-            musicPlay.start();
-             try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            musicPlay.start();
-    	}
+    public static void main(String args[]) throws NoPlayerException, IOException, InterruptedException,
+    	UnsupportedAudioFileException, LineUnavailableException {
+    	playOnce("Devils_Never_Cry.wav");
 
     }
 }
