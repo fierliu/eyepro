@@ -86,8 +86,8 @@ public class Main extends Application {
 					Platform.runLater(()->{
 						try {
 							PropertiesDAO p = new PropertiesDAO();
-							if(p.readPopUpSwitch()) showTimedDialog(120000, p.readNoticeWord());						
 							if(p.readMusicSwich()) MusicPlay.playOnce("2 minutes.wav");
+							if(p.readPopUpSwitch()) showTimedDialog(120000, p.readNoticeWord());													
 						} catch (ParserConfigurationException | SAXException | IOException | 
 								NoPlayerException | InterruptedException | 
 								UnsupportedAudioFileException | LineUnavailableException e) {
@@ -99,8 +99,8 @@ public class Main extends Application {
 					Platform.runLater(()->{
 						try {
 							PropertiesDAO p = new PropertiesDAO();
-							if(p.readPopUpSwitch()) showTimedDialog(300000, p.readNoticeWord());							
 							if(p.readMusicSwich()) MusicPlay.playOnce("5 minutes.wav");
+							if(p.readPopUpSwitch()) showTimedDialog(300000, p.readNoticeWord());							
 						} catch (ParserConfigurationException | SAXException | IOException |
 								NoPlayerException | InterruptedException | 
 								UnsupportedAudioFileException | LineUnavailableException e) {

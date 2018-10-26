@@ -7,6 +7,7 @@ import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -104,7 +105,7 @@ public class PropertiesDAO {
         TransformerFactory transFactory=TransformerFactory.newInstance();
         try {
             Transformer transformer = transFactory.newTransformer();
-            transformer.setOutputProperty("indent", "yes");
+            transformer.setOutputProperty(OutputKeys.INDENT,"no");//若 设置为no，会在每次保存时都增加一行空格
             DOMSource source=new DOMSource();
             source.setNode(doc);
             StreamResult result=new StreamResult();
