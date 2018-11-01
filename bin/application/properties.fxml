@@ -29,7 +29,7 @@
                         <ToggleGroup fx:id="group" />
                      </toggleGroup>
                   </RadioButton>
-                 	<RadioButton fx:id="radioBtnPlayTTS" disable="true" mnemonicParsing="false" onAction="#radioBtnPlayTTSHandler" text="PlayTTS" toggleGroup="$group" />
+                 	<RadioButton fx:id="radioBtnPlayTTS" mnemonicParsing="false" onAction="#radioBtnPlayTTSHandler" text="PlayTTS" toggleGroup="$group" />
                  	<RadioButton fx:id="radioBtnSilence" mnemonicParsing="false" onAction="#radioBtnSilenceHandler" text="Silence" toggleGroup="$group" />
                </children>
             </VBox>

@@ -14,5 +14,6 @@
 	<classpathentry kind="lib" path="lib/mediaplayer.jar"/>
 	<classpathentry kind="lib" path="lib/multiplayer.jar"/>
 	<classpathentry kind="lib" path="lib/sound.jar"/>
+	<classpathentry kind="lib" path="lib/jacob.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

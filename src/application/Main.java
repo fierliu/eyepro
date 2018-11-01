@@ -1,4 +1,5 @@
 package application;
+import java.awt.Image;
 /*
 
  * 另外PopUp占用的内存也有点高，是否能改用其他形式进行优化？
@@ -10,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
-
+import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -87,6 +88,8 @@ public class Main extends Application {
 						try {
 							PropertiesDAO p = new PropertiesDAO();
 							if(p.readMusicSwich()) MusicPlay.playOnce("2 minutes.wav");
+							if(p.readTTSSwitch()) 
+								TTS.playTTS("现在是"+ GetTime.getSharpAndHalfTime());
 							if(p.readPopUpSwitch()) showTimedDialog(120000, p.readNoticeWord());													
 						} catch (ParserConfigurationException | SAXException | IOException | 
 								NoPlayerException | InterruptedException | 
@@ -100,6 +103,8 @@ public class Main extends Application {
 						try {
 							PropertiesDAO p = new PropertiesDAO();
 							if(p.readMusicSwich()) MusicPlay.playOnce("5 minutes.wav");
+							if(p.readTTSSwitch()) 
+								TTS.playTTS("现在是"+ GetTime.getSharpAndHalfTime());
 							if(p.readPopUpSwitch()) showTimedDialog(300000, p.readNoticeWord());							
 						} catch (ParserConfigurationException | SAXException | IOException |
 								NoPlayerException | InterruptedException | 
@@ -151,6 +156,7 @@ public class Main extends Application {
 	            Thread.sleep(time);
 	            PropertiesDAO p = new PropertiesDAO();
 	            if(p.readMusicSwich()) MusicPlay.playOnce("Devils_Never_Cry.wav");
+	            if(p.readTTSSwitch()) TTS.playTTS("Time's up!");
 	            if (popup.isShowing()) {
 	                Platform.runLater(() ->
 	                popup.close());
@@ -259,8 +265,8 @@ public class Main extends Application {
 		try {
 			SystemTray tray = SystemTray.getSystemTray();
 			BufferedImage image = ImageIO.read(Main.class
-					.getResourceAsStream("/application/eye_tray.png"));//会有图标显示不全的问题
-//					.getResource("eye_tray.png"));
+					.getResourceAsStream("/application/hiei.png"));//会有图标显示不全的问题
+//					.getResource("eye_tray.png"));		
 //			BufferedImage image = ImageIO.read(new File("eye_tray.png"));
 //			java.awt.Image image = Toolkit.getDefaultToolkit().getImage("eye_tray.png");
 			trayIcon = new TrayIcon(image, "EyePro", popupMenu);
