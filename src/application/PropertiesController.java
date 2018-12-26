@@ -57,7 +57,9 @@ public class PropertiesController implements Initializable{
 		}else{
 			radioBtnSilence.setSelected(true);
 		}
-
+		//显示提醒文字
+		textFieldNoticeWord.setText(pdao.readNoticeWord());
+		textFieldMission.setText(pdao.readMission());
 		//			设置早于当日的时间不能选择
 		final Callback<DatePicker, DateCell> dayCellFactory =
 				new Callback<DatePicker, DateCell>() {
@@ -76,6 +78,12 @@ public class PropertiesController implements Initializable{
 					}
 		};
 		datePickerMission.setDayCellFactory(dayCellFactory);
+
+		//显示已设定的日期
+		LocalDate ld = LocalDate.parse(pdao.readDayCountDown());
+		datePickerMission.setValue(ld);
+//		System.out.println(ld);
+
 	}
 
 	public void checkBoxPopUpHandler(ActionEvent event)

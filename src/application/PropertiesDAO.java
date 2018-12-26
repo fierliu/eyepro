@@ -30,6 +30,7 @@ public class PropertiesDAO {
 		dbf = DocumentBuilderFactory.newInstance();
 		db = dbf.newDocumentBuilder();
 		doc = db.parse("config.xml");
+		//这里表示src所在的根目录
 		root = doc.getDocumentElement();
 //		System.out.print(root.getNodeName());
 	}
@@ -120,4 +121,5 @@ public class PropertiesDAO {
             e.printStackTrace();
         }
     }
+
 }

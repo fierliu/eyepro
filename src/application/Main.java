@@ -89,8 +89,8 @@ public class Main extends Application {
 							PropertiesDAO p = new PropertiesDAO();
 							if(p.readMusicSwich()) MusicPlay.playOnce("2 minutes.wav");
 							if(p.readTTSSwitch()) 
-								TTS.playTTS("现在是"+ GetTime.getSharpAndHalfTime());
-							if(p.readPopUpSwitch()) showTimedDialog(120000, p.readNoticeWord());													
+								TTS.playTTS("It's"+ GetTime.getSharpAndHalfTime()+" now.");
+							if(p.readPopUpSwitch()) showTimedDialog(120000, p.readNoticeWord());
 						} catch (ParserConfigurationException | SAXException | IOException | 
 								NoPlayerException | InterruptedException | 
 								UnsupportedAudioFileException | LineUnavailableException e) {
@@ -104,7 +104,7 @@ public class Main extends Application {
 							PropertiesDAO p = new PropertiesDAO();
 							if(p.readMusicSwich()) MusicPlay.playOnce("5 minutes.wav");
 							if(p.readTTSSwitch()) 
-								TTS.playTTS("现在是"+ GetTime.getSharpAndHalfTime());
+								TTS.playTTS("It's "+ GetTime.getSharpAndHalfTime()+ " now.");
 							if(p.readPopUpSwitch()) showTimedDialog(300000, p.readNoticeWord());							
 						} catch (ParserConfigurationException | SAXException | IOException |
 								NoPlayerException | InterruptedException | 
@@ -143,7 +143,7 @@ public class Main extends Application {
 	    root.getChildren().addAll(new Label(message), closeBtn);
 	    Scene scene = new Scene(root);
 	    popup.setScene(scene);
-	    popup.setTitle("Rest & Check");
+	    popup.setTitle("Rest");
 	    Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 	    popup.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() - 180);
 	    popup.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() - 130);

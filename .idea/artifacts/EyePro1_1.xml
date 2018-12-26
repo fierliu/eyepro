@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="EyePro1.1">
+    <output-path>D:/EyePro1_1</output-path>
+    <root id="archive" name="EyePro1.1.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="EyePro" />
+      <element id="library" level="module" name="multiplayer.jar" module-name="EyePro" />
+      <element id="library" level="project" name="cmu_time_awb" />
+      <element id="library" level="module" name="customizer.jar" module-name="EyePro" />
+      <element id="library" level="module" name="dom4j-1.6.1.jar" module-name="EyePro" />
+      <element id="library" level="module" name="jacob.jar" module-name="EyePro" />
+      <element id="library" level="module" name="jmf-2.1.1e.jar" module-name="EyePro" />
+      <element id="library" level="module" name="jmf.jar" module-name="EyePro" />
+      <element id="library" level="module" name="mediaplayer.jar" module-name="EyePro" />
+      <element id="library" level="module" name="sound.jar" module-name="EyePro" />
+    </root>
+  </artifact>
+</component>
