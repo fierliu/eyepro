@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: . EyePro1.1_lib/dom4j-1.6.1.jar EyePro1.1_lib/jmf-2.1.1e.j
- ar EyePro1.1_lib/customizer.jar EyePro1.1_lib/jmf.jar EyePro1.1_lib/m
- ediaplayer.jar EyePro1.1_lib/multiplayer.jar EyePro1.1_lib/sound.jar 
- EyePro1.1_lib/jacob.jar
-Main-Class: application.Main
-

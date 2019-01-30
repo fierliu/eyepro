@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="522.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allan.controller.PropertiesController">
+   <children>
+      <VBox layoutX="9.0" layoutY="11.0" prefHeight="504.0" prefWidth="327.0">
+         <children>
+            <Label text="Popup Switch">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="checkBoxPopUp" mnemonicParsing="false" onAction="#checkBoxPopUpHandler" text="ShowPopUp" />
+            <Label text="Sound Switch">
+            	 <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <VBox>
+               <children>
+                 	<RadioButton fx:id="radioBtnPlayMusic" mnemonicParsing="false" onAction="#radioBtnPlayMusicHandler" text="PlayMusic">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="group" />
+                     </toggleGroup>
+                  </RadioButton>
+                 	<RadioButton fx:id="radioBtnPlayTTS1" mnemonicParsing="false" onAction="#radioBtnPlaySpvTTSHandler" text="PlayTTS-1" toggleGroup="$group" />
+                  <RadioButton fx:id="radioBtnPlayTTS2" mnemonicParsing="false" onAction="#radioBtnPlayFreeTTSHandler" text="PlayTTS-2" toggleGroup="$group"/>
+                 	<RadioButton fx:id="radioBtnSilence" mnemonicParsing="false" onAction="#radioBtnSilenceHandler" text="Silence" toggleGroup="$group" />
+               </children>
+            </VBox>
+            <Label text="Notice Word">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <HBox>
+               <children>
+                  <TextField fx:id="textFieldNoticeWord" prefHeight="13.0" prefWidth="216.0" promptText="Input Notice Word" />
+                  <Button fx:id="btnNoticeWord" mnemonicParsing="false" onAction="#btnNoticeWordHandler" text="Confirm" />
+               </children>
+            </HBox>
+            <Label fx:id="lbNoticeWord" textFill="#10e12f" />
+            <Label text="Set Mission">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <HBox>
+               <children>
+                  <Label text="Set Mission Date    " />
+                  <DatePicker fx:id="datePickerMission" onAction="#datePickerMissionHandler" promptText="Chose Mission Date" />
+               </children>
+            </HBox>
+            <Label fx:id="lbNoticeMissionDate" textFill="#0aeb2f" />
+            <HBox>
+               <children>
+                  <Label text="Set Mission Name  " />
+                  <TextField fx:id="textFieldMission" />
+                  <Button fx:id="btnMissionName" mnemonicParsing="false" onAction="#btnMissionNameHandler" text="Confirm" />
+               </children>
+            </HBox>
+            <Label fx:id="lbNoticeMission" textFill="#07f040" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
