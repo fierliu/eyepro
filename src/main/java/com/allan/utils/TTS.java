@@ -60,13 +60,14 @@ public class TTS {
         voice.speak(s);
     }
 
-    public static void main(String[] args) throws Exception {
+//    public static void main(String[] args) throws Exception {
 //        playSpVoiceTTS("It's "+ GetTime.getSharpAndHalfTime()+" now");
-        playSpVoiceTTS("It's "+ "19 o'clock" +" now");
+//        playSpVoiceTTS("It's "+ "19 o'clock" +" now");
+//        playSpVoiceTTS("现在时间是"+ "20:30");
 //        System.out.println("GetTime.getSharpAndHalfTime() = " + GetTime.getSharpAndHalfTime());
-        String substring = "19:00".substring(2);
-        System.out.println("substring = " + "19:00".substring(0,2));
-    }
+//        String substring = "19:00".substring(2);
+//        System.out.println("substring = " + "19:00".substring(0,2));
+//    }
 
 }
 

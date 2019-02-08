@@ -27,6 +27,7 @@ import com.allan.controller.Controller;
 import com.allan.dao.PropertiesDAO;
 import com.allan.utils.GetTime;
 import com.allan.utils.MusicPlay;
+import com.allan.utils.SoundManager;
 import com.allan.utils.TTS;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -56,7 +57,7 @@ public class Main extends Application {
 	}
 	@Override
 	public void start(Stage primaryStage) throws IOException, DocumentException {
-		FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/fxml/scene.fxml"));
+		FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/com/allan/fxml/scene.fxml"));
 		Parent root = fxmlloader.load();
 		Scene scene = new Scene(root);
 //		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -91,14 +92,8 @@ public class Main extends Application {
 						try {
 							PropertiesDAO p = new PropertiesDAO();
 							if(p.readPopUpSwitch()) showTimedDialog(120000, p.readNoticeWord());
-							if(p.readMusicSwich()) MusicPlay.playOnce("2 minutes.wav");
-							else if(p.readSpvTTSSwitch())
-								TTS.playSpVoiceTTS("It's "+ GetTime.getSharpAndHalfTime()+" now.");
-							else if(p.readFreeTTSSwitch())
-								TTS.playFreeTTS("It's "+ GetTime.getSharpAndHalfTime()+" now.");
-						} catch (ParserConfigurationException | SAXException | IOException |
-								NoPlayerException | InterruptedException | 
-								UnsupportedAudioFileException | LineUnavailableException e) {
+                            SoundManager.playSound(SoundManager.HALF);
+						} catch (ParserConfigurationException | SAXException | IOException e) {
 							e.printStackTrace();
 						}
 					});
@@ -108,14 +103,8 @@ public class Main extends Application {
 						try {
 							PropertiesDAO p = new PropertiesDAO();
 							if(p.readPopUpSwitch()) showTimedDialog(300000, p.readNoticeWord());
-							if(p.readMusicSwich()) MusicPlay.playOnce("5 minutes.wav");
-							else if(p.readSpvTTSSwitch())
-								TTS.playSpVoiceTTS("It's "+ GetTime.getSharpAndHalfTime()+ " now.");
-							else if(p.readFreeTTSSwitch())
-								TTS.playFreeTTS("It's "+ GetTime.getSharpAndHalfTime()+ " now.");
-						} catch (ParserConfigurationException | SAXException | IOException |
-								NoPlayerException | InterruptedException | 
-								UnsupportedAudioFileException | LineUnavailableException e) {
+							SoundManager.playSound(SoundManager.SHARP);
+						} catch (ParserConfigurationException | SAXException | IOException e) {
 							e.printStackTrace();
 						}
 					});
@@ -176,9 +165,7 @@ public class Main extends Application {
 	                Platform.runLater(() ->
 	                popup.close());
 	            }
-				if(p.readMusicSwich()) MusicPlay.playOnce("Devils_Never_Cry.wav");
-				else if(p.readSpvTTSSwitch()) TTS.playSpVoiceTTS("Time's up!");
-				else if(p.readFreeTTSSwitch()) TTS.playFreeTTS("Time's up!");
+				SoundManager.playSoundTimesUp();
 	        } catch (Exception exp) {
 	            exp.printStackTrace();
 	        }
@@ -219,7 +206,7 @@ public class Main extends Application {
 								Stage stage = new Stage();
 								stage.initModality(Modality.APPLICATION_MODAL);
 								FXMLLoader fxmlloader =
-									new FXMLLoader(getClass().getResource("/fxml/properties.fxml"));
+									new FXMLLoader(getClass().getResource("/com/allan/fxml/properties.fxml"));
 								Parent root;
 								root = fxmlloader.load();
 								Scene scene = new Scene(root);
@@ -283,7 +270,7 @@ public class Main extends Application {
 		try {
 			SystemTray tray = SystemTray.getSystemTray();
 			BufferedImage image = ImageIO.read(Main.class
-					.getResourceAsStream("/pics/hiei.png"));//会有图标显示不全的问题
+					.getResourceAsStream("/com/allan/pics/hiei.png"));//会有图标显示不全的问题
 			trayIcon = new TrayIcon(image, "EyePro", popupMenu);
 			trayIcon.setToolTip("EyePro");
 			tray.add(trayIcon);

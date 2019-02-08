@@ -60,7 +60,7 @@ public class PropertiesDAO {
 		root.getElementsByTagName("musicSwith").item(0).setTextContent(swth);
 		saveXml("config.xml", doc);
 	}
-//---------------spvtts开关------------------------
+//---------------spvtts开关（英文）------------------------
 	public Boolean readSpvTTSSwitch(){
 		String swch = root.getElementsByTagName("SpvTTSSwitch").item(0).getTextContent();
 //		System.out.print(swch);
@@ -72,6 +72,20 @@ public class PropertiesDAO {
 	}
 	public void writeSpvTTSSwitch(String swth) {
 		root.getElementsByTagName("SpvTTSSwitch").item(0).setTextContent(swth);
+		saveXml("config.xml", doc);
+	}
+	//-----------spvtts开关（中文）-------------------------
+	public Boolean readSpvTTSSwitchCh(){
+		String swch = root.getElementsByTagName("SpvTTSSwitchCh").item(0).getTextContent();
+//		System.out.print(swch);
+
+		if(swch.equals("on")) {
+			return true;
+		}
+		else return false;
+	}
+	public void writeSpvTTSSwitchCh(String swth) {
+		root.getElementsByTagName("SpvTTSSwitchCh").item(0).setTextContent(swth);
 		saveXml("config.xml", doc);
 	}
 	//---------------freetts开关------------------------

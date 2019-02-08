@@ -1,8 +1,8 @@
 package test;
 
-import application.MusicPlay;
-import application.PropertiesDAO;
-import application.TTS;
+import com.allan.dao.PropertiesDAO;
+import com.allan.utils.MusicPlay;
+import com.allan.utils.TTS;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Insets;

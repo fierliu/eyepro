@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
+import javax.swing.*;
 import javax.xml.parsers.ParserConfigurationException;
 
 import com.allan.dao.PropertiesDAO;
@@ -29,7 +30,8 @@ public class PropertiesController implements Initializable{
 	@FXML
 	private CheckBox  checkBoxPopUp;
 	@FXML
-	private RadioButton radioBtnPlayMusic, radioBtnPlayTTS1, radioBtnPlayTTS2, radioBtnSilence;
+	private RadioButton radioBtnPlayMusic, radioBtnPlayTTS1, radioBtnPlayTTS2,
+			radioBtnPlayTTS3, radioBtnSilence;
 	@FXML
 	private ToggleGroup group;
 	@FXML
@@ -44,20 +46,23 @@ public class PropertiesController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-			try {
-				pdao = new PropertiesDAO();
-			} catch (ParserConfigurationException | SAXException | IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		try {
+			pdao = new PropertiesDAO();
+		} catch (ParserConfigurationException | SAXException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//初始化弹窗开关
 		checkBoxPopUp.setSelected(pdao.readPopUpSwitch());
-
+		//初始化声音开关
 		if(pdao.readMusicSwich()){
 			radioBtnPlayMusic.setSelected(true);
 		}else if(pdao.readSpvTTSSwitch()){
 			radioBtnPlayTTS1.setSelected(true);
 		}else if (pdao.readFreeTTSSwitch()){
 			radioBtnPlayTTS2.setSelected(true);
+		}else if(pdao.readSpvTTSSwitchCh()){
+            radioBtnPlayTTS3.setSelected(true);
 		}else {
 			radioBtnSilence.setSelected(true);
 		}
@@ -108,19 +113,27 @@ public class PropertiesController implements Initializable{
 			pdao.writeMusicSound("on");
 			pdao.writeSpvTTSSwitch("off");
 			pdao.writeFreeTTSSwitch("off");
-		}else{
-			pdao.writeMusicSound("off");
+			pdao.writeSpvTTSSwitchCh("off");
 		}
 	}
-
+	//windows平台英文语音
 	public void radioBtnPlaySpvTTSHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
 		pdao = new PropertiesDAO();
 		if(radioBtnPlayTTS1.isSelected()){
 			pdao.writeSpvTTSSwitch("on");
 			pdao.writeMusicSound("off");
 			pdao.writeFreeTTSSwitch("off");
-		}else{
+			pdao.writeSpvTTSSwitchCh("off");
+		}
+	}
+	//windows平台中文语音
+	public void radioBtnPlaySpvTTSChHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
+		pdao = new PropertiesDAO();
+		if(radioBtnPlayTTS3.isSelected()){
+			pdao.writeSpvTTSSwitchCh("on");
 			pdao.writeSpvTTSSwitch("off");
+			pdao.writeMusicSound("off");
+			pdao.writeFreeTTSSwitch("off");
 		}
 	}
 
@@ -130,8 +143,7 @@ public class PropertiesController implements Initializable{
 			pdao.writeFreeTTSSwitch("on");
 			pdao.writeSpvTTSSwitch("off");
 			pdao.writeMusicSound("off");
-		}else{
-			pdao.writeFreeTTSSwitch("off");
+			pdao.writeSpvTTSSwitchCh("off");
 		}
 	}
 
@@ -141,6 +153,7 @@ public class PropertiesController implements Initializable{
 			pdao.writeMusicSound("off");
 			pdao.writeSpvTTSSwitch("off");
 			pdao.writeFreeTTSSwitch("off");
+			pdao.writeSpvTTSSwitchCh("off");
 		}
 	}
 

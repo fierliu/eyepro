@@ -12,10 +12,7 @@ public class GetTime {
         Date date = (Date) calendar.getTime();
         SimpleDateFormat format = new SimpleDateFormat("HH:mm");
         String time = format.format(date);
-        //after 12:00, the sharp time spoke by spvoice can pronounce 'hundred'
-        if(time.substring(2).equals(":00")) time = time.substring(0,2) + " o'clock";
-        //before 10:00, the sharp time spoke by spvoice can pronounce 'zero'
-        if(time.substring(0,1).equals("0")) time = time.substring(1);
+
         return time;
 	}
 

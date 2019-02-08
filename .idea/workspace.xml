@@ -2,113 +2,97 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="EyePro1.1" />
+      <artifact name="EyePro1.2" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7703c45c-2dad-4c81-8ba8-22974ba77d4b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mobicents_external_freetts_cmu_time_awb_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mobicents_external_freetts_cmu_us_kal_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mobicents_external_freetts_cmudict04_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mobicents_external_freetts_cmulex_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mobicents_external_freetts_cmutimelex_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/PopUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/EyePro1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/EyePro1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/allan/utils/SoundManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/EyePro1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/EyePro1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/cmu_time_awb.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/EyePro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EyePro.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/FilePathUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/GetTime.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/Main$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/Main$3$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/Main$3$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/Main$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/Main$4$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/Main$4$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/Main$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/MusicPlay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/PropertiesController$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/PropertiesController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/PropertiesController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/PropertiesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/PropertiesDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/TTS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/eye_tray.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/hiei.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/properties.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/scene.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/vigil.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/classes/application/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/classes/application/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/classes/application/Main$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/classes/application/Main$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/classes/application/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/classes/application/ReadBreak.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/classes/application/eye.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/classes/application/runBat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/classes/application/scene.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/classes/application/setColor.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/src/application/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/src/application/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/src/application/ReadBreak.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/src/application/eye.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/src/application/runBat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/src/application/scene.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build/src/application/setColor.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dist/resources/build.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/project/src/application/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/project/src/application/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/project/src/application/ReadBreak.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/project/src/application/eye.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/project/src/application/runBat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/project/src/application/scene.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/project/src/application/setColor.bat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eyepro.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eyepro.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/cmu_time_awb.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/cmu_time_awb.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/cmu_us_kal.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/cmu_us_kal.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/cmudict04.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/cmudict04.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/cmulex.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/cmulex.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/cmutimelex.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/cmutimelex.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/customizer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/customizer.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/dom4j-1.6.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/dom4j-1.6.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/en_us.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/en_us.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freetts-jsapi10.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/freetts-jsapi10.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freetts.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/freetts.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jacob-1.18-x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/jacob-1.18-x64.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jacob-1.18-x86.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/jacob-1.18-x86.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jacob.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/jacob.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jmf-2.1.1e.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/jmf-2.1.1e.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jmf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/jmf.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jsapi.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/jsapi.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mbrola.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/mbrola.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mediaplayer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/mediaplayer.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/multiplayer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/multiplayer.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sound.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/sound.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/FilePathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/utils/FilePathUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/GetTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/utils/GetTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/MusicPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/utils/MusicPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/PropertiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/controller/PropertiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/PropertiesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/dao/PropertiesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/TTS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/utils/TTS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/eye_tray.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pics/eye_tray.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/hiei.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pics/hiei.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/properties.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/properties.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/scene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/vigil.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pics/vigil.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/allan/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/allan/controller/PropertiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/controller/PropertiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/allan/dao/PropertiesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/dao/PropertiesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/allan/utils/GetTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/utils/GetTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/allan/utils/MusicPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/utils/MusicPlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/allan/utils/TTS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/utils/TTS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/properties.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/allan/fxml/properties.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/allan/fxml/scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/cmu_time_awb.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/cmu_time_awb.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/cmu_us_kal.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/cmu_us_kal.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/cmudict04.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/cmudict04.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/cmulex.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/cmulex.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/cmutimelex.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/cmutimelex.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/customizer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/customizer.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/dom4j-1.6.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/dom4j-1.6.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/en_us.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/en_us.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/freetts-jsapi10.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freetts-jsapi10.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/freetts.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freetts.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/jacob-1.18-x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/lib/jacob-1.18-x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/jacob-1.18-x86.dll" beforeDir="false" afterPath="$PROJECT_DIR$/lib/jacob-1.18-x86.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/jacob.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/jacob.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/jmf-2.1.1e.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/jmf-2.1.1e.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/jmf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/jmf.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/jsapi.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/jsapi.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/mbrola.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/mbrola.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/mediaplayer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/mediaplayer.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/multiplayer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/multiplayer.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/sound.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sound.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pics/eye_tray.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/allan/pics/eye_tray.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pics/hiei.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/allan/pics/hiei.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pics/vigil.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/allan/pics/vigil.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PopUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EyePro-1.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/dao/PropertiesDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/dao/PropertiesDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/utils/GetTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/utils/GetTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/utils/MusicPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/utils/MusicPlay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/utils/TTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/utils/TTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/properties.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/scene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/cmu_time_awb.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/cmu_us_kal.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/cmudict04.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/cmulex.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/cmutimelex.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/customizer.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/dom4j-1.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/en_us.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/freetts-jsapi10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/freetts.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/jacob-1.18-x64.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/jacob-1.18-x86.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/jacob.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/jmf-2.1.1e.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/jmf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/jsapi.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/mbrola.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/mediaplayer.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/multiplayer.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/sound.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pics/eye_tray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pics/hiei.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pics/vigil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -121,42 +105,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/application/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+            <state relative-caret-position="133">
+              <caret line="264" selection-start-line="264" selection-end-line="264" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2672#3773#0" expanded="true" />
+                <element signature="e#3772#3773#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="properties.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/properties.fxml">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+            <state relative-caret-position="120">
+              <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file leaf-file-name="scene.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/scene.fxml">
+      <file leaf-file-name="SoundManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/SoundManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="7" column="83" selection-start-line="7" selection-start-column="83" selection-end-line="7" selection-end-column="83" />
+            <state relative-caret-position="336">
+              <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="PropertiesDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/dao/PropertiesDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1440">
+              <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -181,18 +171,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/src/application/PropertiesDAO.java" />
         <option value="$PROJECT_DIR$/src/application/properties.fxml" />
         <option value="$PROJECT_DIR$/src/application/PropertiesController.java" />
         <option value="$PROJECT_DIR$/src/application/TTS.java" />
         <option value="$PROJECT_DIR$/src/application/GetTime.java" />
-        <option value="$PROJECT_DIR$/src/test/PopUp.java" />
         <option value="$PROJECT_DIR$/src/application/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/allan/controller/PropertiesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/allan/application/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/properties.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/scene.fxml" />
+        <option value="$PROJECT_DIR$/src/test/PopUp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/allan/dao/PropertiesDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/allan/utils/GetTime.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/allan/utils/TTS.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/properties.fxml" />
+        <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/allan/controller/PropertiesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/allan/utils/MusicPlay.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/allan/utils/SoundManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/allan/application/Main.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
@@ -235,7 +230,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="845" />
+    <option name="x" value="468" />
+    <option name="y" value="126" />
     <option name="width" value="1395" />
     <option name="height" value="1090" />
   </component>
@@ -254,30 +250,12 @@
               <item name="EyePro" type="b2602c69:ProjectViewProjectNode" />
               <item name="eyepro-master" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="EyePro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eyepro-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EyePro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eyepro-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EyePro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eyepro-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -289,18 +267,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548767122246" />
-    <property name="last_opened_file_path" value="D:/Program Files/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/lib/sound.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.15402299" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\IT\MyProject\eyepro-master" />
+      <recent name="F:\IT\MyProject\eyepro-master\src\main\resources" />
+      <recent name="F:\IT\MyProject\eyepro-master\src\main\resources\com\allan" />
       <recent name="$PROJECT_DIR$/src/main/resources/pics" />
       <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/allan/main" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\IT\GUI\eyepro-master\lib" />
@@ -347,6 +327,17 @@
         </pattern>
       </extension>
     </configuration>
+    <configuration name="MusicPlay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.allan.utils.MusicPlay" />
+      <module name="EyePro" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.allan.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="PopUp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.PopUp" />
       <module name="EyePro" />
@@ -358,24 +349,13 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="PropertiesDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="application.PropertiesDAO" />
+    <configuration name="TTS (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.allan.utils.TTS" />
       <module name="EyePro" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="TTS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="application.TTS" />
-      <module name="EyePro" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="application.*" />
+          <option name="PATTERN" value="com.allan.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -441,18 +421,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.TTS" />
-      <item itemvalue="Application.PropertiesDAO" />
       <item itemvalue="Application.PopUp" />
       <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.TTS (1)" />
+      <item itemvalue="Application.MusicPlay" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.MusicPlay" />
+        <item itemvalue="Application.TTS (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.PopUp" />
-        <item itemvalue="Application.TTS" />
-        <item itemvalue="Application.PropertiesDAO" />
       </list>
     </recent_temporary>
   </component>
@@ -491,45 +471,51 @@
       <workItem from="1547945461118" duration="29000" />
       <workItem from="1548765450162" duration="2198000" />
       <workItem from="1548835494506" duration="2528000" />
-      <workItem from="1548851779744" duration="4648000" />
+      <workItem from="1548851779744" duration="5525000" />
+      <workItem from="1548918315022" duration="2123000" />
+      <workItem from="1548987374579" duration="639000" />
+      <workItem from="1549010962346" duration="1057000" />
+      <workItem from="1549522846110" duration="8877000" />
+      <workItem from="1549587458086" duration="13620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63670000" />
+    <option name="totallyTimeSpent" value="90863000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1488" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.5645161" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.37224385" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.14993216" />
+      <window_info anchor="right" x="0" y="0" width="322" height="678" id="Documentation" order="10" side_tool="true" weight="0.45929444" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.14993216" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44545454" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3385214" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18928087" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17299864" />
+      <window_info anchor="right" id="Database" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" x="89" y="89" width="1648" height="902" id="Documentation" order="9" type="FLOATING" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32949308" />
     </layout>
@@ -540,7 +526,150 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/application/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2976">
+          <caret line="167" column="48" selection-start-line="167" selection-start-column="48" selection-end-line="167" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2672#3773#0" expanded="true" />
+            <element signature="e#3772#3773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/MusicPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="67" selection-start-line="67" selection-end-line="71" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/SoundManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1776">
+          <caret line="81" column="82" selection-start-line="81" selection-start-column="82" selection-end-line="81" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/dao/PropertiesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/TTS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1464">
+          <caret line="65" column="10" lean-forward="true" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/controller/PropertiesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/allan/fxml/properties.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="18" selection-start-line="12" selection-start-column="4" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/application/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5496">
+          <caret line="277" selection-start-line="277" selection-end-line="277" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/PopUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1392">
+          <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="18" selection-start-line="12" selection-start-column="4" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/application/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6648">
+          <caret line="277" lean-forward="true" selection-start-line="277" selection-end-line="277" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="18" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/application/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6840">
+          <caret line="285" column="72" selection-start-line="285" selection-start-column="72" selection-end-line="285" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/application/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6840">
+          <caret line="285" column="72" lean-forward="true" selection-start-line="285" selection-start-column="72" selection-end-line="285" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -548,9 +677,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eyepro.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/eyepro.xml" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -558,9 +685,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eyepro.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/eyepro.xml" />
     <entry file="jar://D:/Java/jdk-9.0.4/lib/src.zip!/java.base/java/time/LocalDate.java" />
     <entry file="file://$PROJECT_DIR$/module_eyepro.xml" />
     <entry file="file://$PROJECT_DIR$/EyePro.iml">
@@ -572,103 +697,135 @@
     </entry>
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/Scene.java" />
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_191/jre/lib/rt.jar!/java/lang/String.class" />
-    <entry file="file://$PROJECT_DIR$/src/test/PopUp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///tmp/modules.uml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/controller/PropertiesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/TTS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/GetTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/MusicPlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/dao/PropertiesDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eyepro.properties" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/FilePathUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eyepro.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1944" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/properties.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/eyepro.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/allan/fxml/scene.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/scene.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="7" column="83" selection-start-line="7" selection-start-column="83" selection-end-line="7" selection-end-column="83" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/PopUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1464">
+          <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/GetTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/FilePathUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/allan/fxml/properties.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/controller/PropertiesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/TTS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1464">
+          <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/MusicPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="67" selection-start-line="67" selection-end-line="71" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/dom4j-1.6.1.jar!/META-INF/LICENSE.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/dom4j-1.6.1.jar!/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/dao/PropertiesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/freetts.jar!/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/apps/Java/jdk1.8.0_201/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="2259" column="50" selection-start-line="2259" selection-start-column="50" selection-end-line="2259" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/SoundManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/application/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+        <state relative-caret-position="133">
+          <caret line="264" selection-start-line="264" selection-end-line="264" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2672#3773#0" expanded="true" />
+            <element signature="e#3772#3773#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="120">
+          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -678,11 +835,11 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>EyePro1.1</last-edited>
+          <last-edited>EyePro1.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.15402299" />
                 <option value="0.5" />
               </list>
             </option>
@@ -695,7 +852,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.15402299" />
               </list>
             </option>
           </splitter-proportions>
@@ -730,7 +887,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.15402299" />
               </list>
             </option>
           </splitter-proportions>
@@ -750,11 +907,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>cmu_time_awb</last-edited>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.15402299" />
               </list>
             </option>
           </splitter-proportions>

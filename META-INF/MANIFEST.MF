@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Class-Path: .lib/cmu_time_awb.jar lib/cmu_us_kal.jar lib/cmudict04.jar
+  lib/cmulex.jar lib/dom4j-1.6.1.jar lib/jmf-2.1.1e.jar lib/customizer
+ .jar lib/jmf.jar lib/en_us.jar lib/freetts.jar lib/freetts-jsapi10.ja
+ r lib/jsapi.jar lib/mbrola.jar lib/mediaplayer.jar lib/multiplayer.ja
+ r lib/sound.jar lib/jacob.jar
+Main-Class: com.allan.application.Main
+

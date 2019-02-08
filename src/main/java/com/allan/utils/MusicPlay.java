@@ -20,22 +20,34 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class MusicPlay {
 	
-    public static void playOnce(String musicName) throws NoPlayerException, IOException, 
-    InterruptedException, UnsupportedAudioFileException, IOException, LineUnavailableException {
+    public static void playOnce(String musicName) throws IOException {
     	String musicFile = System.getProperty("user.dir") + "\\music\\" + musicName;
 //    	System.out.println(musicFile);
   // 获取音频输入流
-    	AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(
-    			new File(FilePathUtil.getFilePath(musicFile)));
-  // 获取音频编码对象
+		AudioInputStream audioInputStream = null;
+		try {
+			audioInputStream = AudioSystem.getAudioInputStream(
+					new File(FilePathUtil.getFilePath(musicFile)));
+		} catch (UnsupportedAudioFileException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		// 获取音频编码对象
     	AudioFormat audioFormat = audioInputStream.getFormat();
 
   // 设置数据输入
 		DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class,
 	    audioFormat, AudioSystem.NOT_SPECIFIED);
-		SourceDataLine sourceDataLine = (SourceDataLine) AudioSystem.getLine(dataLineInfo);
-		sourceDataLine.open(audioFormat);
-		sourceDataLine.start();
+		SourceDataLine sourceDataLine = null;
+		try {
+			sourceDataLine = (SourceDataLine) AudioSystem.getLine(dataLineInfo);
+			sourceDataLine.open(audioFormat);
+			sourceDataLine.start();
+		} catch (LineUnavailableException e) {
+			e.printStackTrace();
+		}
+
 	
   /*
    * 从输入流中读取数据发送到混音器
