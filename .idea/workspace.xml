@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7703c45c-2dad-4c81-8ba8-22974ba77d4b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PopUp.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -106,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/PopUp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
-              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+              <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -538,7 +537,7 @@
       <workItem from="1549010962346" duration="1057000" />
       <workItem from="1549522846110" duration="8877000" />
       <workItem from="1549587458086" duration="14218000" />
-      <workItem from="1550795773986" duration="13988000" />
+      <workItem from="1550795773986" duration="14491000" />
     </task>
     <task id="LOCAL-00001" summary="idea git test">
       <created>1550839694938</created>
@@ -547,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550839694938</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="idea git test">
+      <created>1550841485919</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1550841485919</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -571,7 +577,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105449000" />
+    <option name="totallyTimeSpent" value="105952000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1488" height="878" extended-state="6" />
@@ -586,12 +592,12 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.14993216" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.27626458" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.14785992" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39969134" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20691994" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20691994" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -990,7 +996,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/PopUp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
