@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?><properties>      	    
-    <breakTime>36000</breakTime>            	    
-    <popUpSwitch>on</popUpSwitch>        	    
-    <noticeWord>Beck/Neck</noticeWord>        	    
+    <breakTime>36000</breakTime>
+
+    <popUpSwitch>on</popUpSwitch>
+    <popUpPosition>middle</popUpPosition><!--middle/leftBottom/rightBottom-->
+    <popUpSize>small</popUpSize><!--small/middle/large-->
+
+    <noticeWord>Beck/Neck</noticeWord>
+
     <musicSwith>off</musicSwith>
     <!--windows平台英文语音-->
     <SpvTTSSwitch>off</SpvTTSSwitch>
     <!--windos平台中文语音-->
     <SpvTTSSwitchCh>on</SpvTTSSwitchCh>
     <FreeTTSSwitch>off</FreeTTSSwitch>
+
     <dayCountDown>2019-04-03</dayCountDown>        	    
-    <mission>Job2</mission>        
+    <mission>Job2</mission>
+
+
+
+
 </properties>

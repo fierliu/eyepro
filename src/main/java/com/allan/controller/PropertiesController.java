@@ -46,12 +46,7 @@ public class PropertiesController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		try {
-			pdao = new PropertiesDAO();
-		} catch (ParserConfigurationException | SAXException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		pdao = PropertiesDAO.getInstance();
 		//初始化弹窗开关
 		checkBoxPopUp.setSelected(pdao.readPopUpSwitch());
 		//初始化声音开关
@@ -95,9 +90,7 @@ public class PropertiesController implements Initializable{
 
 	}
 
-	public void checkBoxPopUpHandler(ActionEvent event)
-			throws ParserConfigurationException, SAXException, IOException{
-		pdao = new PropertiesDAO();
+	public void checkBoxPopUpHandler(ActionEvent event){
 		if(checkBoxPopUp.isSelected()){
 			pdao.writePopUpSwitch("on");
 		}
@@ -108,7 +101,6 @@ public class PropertiesController implements Initializable{
 
 //-----------------声音handler--------------------
 	public void radioBtnPlayMusicHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
-		pdao = new PropertiesDAO();
 		if(radioBtnPlayMusic.isSelected()){
 			pdao.writeMusicSound("on");
 			pdao.writeSpvTTSSwitch("off");
@@ -118,7 +110,6 @@ public class PropertiesController implements Initializable{
 	}
 	//windows平台英文语音
 	public void radioBtnPlaySpvTTSHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
-		pdao = new PropertiesDAO();
 		if(radioBtnPlayTTS1.isSelected()){
 			pdao.writeSpvTTSSwitch("on");
 			pdao.writeMusicSound("off");
@@ -128,7 +119,6 @@ public class PropertiesController implements Initializable{
 	}
 	//windows平台中文语音
 	public void radioBtnPlaySpvTTSChHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
-		pdao = new PropertiesDAO();
 		if(radioBtnPlayTTS3.isSelected()){
 			pdao.writeSpvTTSSwitchCh("on");
 			pdao.writeSpvTTSSwitch("off");
@@ -138,7 +128,6 @@ public class PropertiesController implements Initializable{
 	}
 
 	public void radioBtnPlayFreeTTSHandler(ActionEvent event) throws IOException, SAXException, ParserConfigurationException {
-		pdao = new PropertiesDAO();
 		if(radioBtnPlayTTS2.isSelected()){
 			pdao.writeFreeTTSSwitch("on");
 			pdao.writeSpvTTSSwitch("off");
@@ -148,7 +137,6 @@ public class PropertiesController implements Initializable{
 	}
 
 	public void radioBtnSilenceHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
-		pdao = new PropertiesDAO();
 		if(radioBtnSilence.isSelected()){
 			pdao.writeMusicSound("off");
 			pdao.writeSpvTTSSwitch("off");
@@ -159,7 +147,6 @@ public class PropertiesController implements Initializable{
 
 
 	public void btnNoticeWordHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
-		pdao = new PropertiesDAO();
 		pdao.writeNoticeWord(textFieldNoticeWord.getText());
 		lbNoticeWord.setText("Submitted.");
 	}
@@ -193,13 +180,12 @@ public class PropertiesController implements Initializable{
 		LocalDate s = datePickerMission.getValue();
 //		System.out.println(s);
 
-		pdao = new PropertiesDAO();
+//		pdao = new PropertiesDAO();
 		pdao.writeDayCountDown(s.toString());
 		lbNoticeMissionDate.setText("Submitted, this will go into effect after the program restart.");
 	}
 
 	public void btnMissionNameHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
-		pdao = new PropertiesDAO();
 		pdao.writeMission(textFieldMission.getText());
 		lbNoticeMission.setText("Submitted, this will go into effect after the program restart.");
 	}

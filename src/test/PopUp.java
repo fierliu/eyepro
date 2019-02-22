@@ -69,8 +69,12 @@ public class PopUp extends Application {
         popup.setScene(scene);
         popup.setTitle("R&O");
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-        popup.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() - 180);
-        popup.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() - 130);
+        popup.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth()/2 - 180);
+        popup.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight()/2 - 130);
+        System.out.println(primaryScreenBounds.getMinX());
+        System.out.println(primaryScreenBounds.getWidth());
+        System.out.println(primaryScreenBounds.getMinY());
+        System.out.println(primaryScreenBounds.getHeight());
         popup.setWidth(180);
         popup.setHeight(130);
         popup.show();
@@ -78,7 +82,7 @@ public class PopUp extends Application {
         Thread thread = new Thread(() -> {
             try {
                 Thread.sleep(time);
-                PropertiesDAO p = new PropertiesDAO();
+                PropertiesDAO p = PropertiesDAO.getInstance();
                 if (popup.isShowing()) {
                     Platform.runLater(() ->
                             popup.close());

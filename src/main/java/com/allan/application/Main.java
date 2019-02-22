@@ -84,13 +84,14 @@ public class Main extends Application {
 		Timer timer = new Timer();
         TimerTask  timerTask = new TimerTask (){
             public void run() {
+				PropertiesDAO p = PropertiesDAO.getInstance();
 //            	System.out.println(get_Time());
 //            	Platform.runLater(()->showTimedDialog(300000, "5 Min."));
 //            	-----------半点提醒--------------------------------------------
 				if(get_Time().equals("30:00")){					
 					Platform.runLater(()->{
 						try {
-							PropertiesDAO p = new PropertiesDAO();
+
 							if(p.readPopUpSwitch()) showTimedDialog(120000, p.readNoticeWord());
                             SoundManager.playSound(SoundManager.HALF);
 						} catch (ParserConfigurationException | SAXException | IOException e) {
@@ -101,7 +102,7 @@ public class Main extends Application {
 				}else if(get_Time().equals("00:00")){
 					Platform.runLater(()->{
 						try {
-							PropertiesDAO p = new PropertiesDAO();
+//							PropertiesDAO p = new PropertiesDAO();
 							if(p.readPopUpSwitch()) showTimedDialog(300000, p.readNoticeWord());
 							SoundManager.playSound(SoundManager.SHARP);
 						} catch (ParserConfigurationException | SAXException | IOException e) {
@@ -160,7 +161,7 @@ public class Main extends Application {
 	    Thread thread = new Thread(() -> {
 	        try {	        	
 	            Thread.sleep(time);
-	            PropertiesDAO p = new PropertiesDAO();
+	            PropertiesDAO p = PropertiesDAO.getInstance();
 	            if (popup.isShowing()) {
 	                Platform.runLater(() ->
 	                popup.close());

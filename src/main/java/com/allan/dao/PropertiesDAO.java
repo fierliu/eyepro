@@ -21,15 +21,31 @@ import org.xml.sax.SAXException;
 
 public class PropertiesDAO {
 
-	DocumentBuilderFactory dbf;
-	DocumentBuilder db;
-	Document doc;
-	Element root, ele;
+	private DocumentBuilderFactory dbf;
+	private DocumentBuilder db;
+	private Document doc;
+	private Element root, ele;
 
-	public PropertiesDAO() throws ParserConfigurationException, SAXException, IOException{
+	//singleton
+	private static class InnerObject{
+		private static PropertiesDAO propertiesDAO = new PropertiesDAO();
+	}
+	public static PropertiesDAO getInstance(){
+		return InnerObject.propertiesDAO;
+	}
+
+	private PropertiesDAO(){
 		dbf = DocumentBuilderFactory.newInstance();
-		db = dbf.newDocumentBuilder();
-		doc = db.parse("config.xml");
+		try {
+			db = dbf.newDocumentBuilder();
+			doc = db.parse("config.xml");
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		}
 		//这里表示src所在的根目录
 		root = doc.getDocumentElement();
 //		System.out.print(root.getNodeName());
@@ -46,6 +62,27 @@ public class PropertiesDAO {
 		root.getElementsByTagName("popUpSwitch").item(0).setTextContent(swth);
 		saveXml("config.xml", doc);
 	}
+
+//-----------------popUpPosition---------------------
+public String readPopUpPosition(){
+	return root.getElementsByTagName("popUpPosition").item(0).getTextContent();
+}
+	public void writePopUpPosition(String position) {
+		root.getElementsByTagName("popUpPosition").item(0).setTextContent(position);
+		saveXml("config.xml", doc);
+	}
+
+//-----------------popUpSize---------------------
+public String readPopUpSize(){
+	return root.getElementsByTagName("popUpSize").item(0).getTextContent();
+}
+	public void writePopUpSize(String size) {
+		root.getElementsByTagName("popUpSize").item(0).setTextContent(size);
+		saveXml("config.xml", doc);
+	}
+
+
+
 //-----------------声音开关-----------------------
 	public Boolean readMusicSwich(){
 		String swch = root.getElementsByTagName("musicSwith").item(0).getTextContent();

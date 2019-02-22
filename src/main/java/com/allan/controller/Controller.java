@@ -35,26 +35,20 @@ public class Controller implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//count down handler
-		PropertiesDAO pd;
-		try {
-			pd = new PropertiesDAO();
-			if(pd.readDayCountDown() != ""){
-				lbCountDownTitle.setText("Count Down");
-				try {
+		PropertiesDAO pd = PropertiesDAO.getInstance();
+		if(pd.readDayCountDown() != ""){
+			lbCountDownTitle.setText("Count Down");
+			try {
 
-					lbCountDown.setText(GetTime.getDifferenceDays(pd.readDayCountDown())
-							+ " days away from " + pd.readMission());
-				} catch (ParseException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}else{
-				lbCountDown.setText("");
-				lbCountDownTitle.setText("");
+				lbCountDown.setText(GetTime.getDifferenceDays(pd.readDayCountDown())
+						+ " days away from " + pd.readMission());
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-		} catch (ParserConfigurationException | SAXException | IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		}else{
+			lbCountDown.setText("");
+			lbCountDownTitle.setText("");
 		}
 
 	}

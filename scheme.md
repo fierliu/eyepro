@@ -1,0 +1,1 @@
+为减少内存使用，PropertiesDao改成单例

@@ -13,21 +13,12 @@ public class SoundManager {
 
     public static final String HALF = "half";
     public static final String SHARP = "sharp";
+    private static PropertiesDAO propertiesDAO = PropertiesDAO.getInstance();
 
     public static void playSound(String word){
-        PropertiesDAO propertiesDAO = null;
+
         String chTimeString = SoundManager.getTimeString("ch");
         String enTimeString = SoundManager.getTimeString("en");
-        try {
-            propertiesDAO = new PropertiesDAO();
-
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         if("half".equals(word) && !"sharp".equals(word)){
             if(propertiesDAO.readMusicSwich()) {
                 try {
@@ -62,16 +53,6 @@ public class SoundManager {
     }
 
     public static void playSoundTimesUp(){
-        PropertiesDAO propertiesDAO = null;
-        try {
-            propertiesDAO = new PropertiesDAO();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         if(propertiesDAO.readSpvTTSSwitchCh()) TTS.playSpVoiceTTS("时间到。");
         else if(propertiesDAO.readMusicSwich()) {
             try {
