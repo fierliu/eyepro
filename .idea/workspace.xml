@@ -7,40 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7703c45c-2dad-4c81-8ba8-22974ba77d4b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_beta_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/allan/utils/BeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/allan/utils/PopUpUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/PropertiesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyePro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EyePro.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/allan/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/allan/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/allan/controller/PropertiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/controller/PropertiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/allan/dao/PropertiesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/dao/PropertiesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/allan/utils/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/allan/utils/SoundManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PopUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/application/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/controller/PropertiesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/dao/PropertiesDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/dao/PropertiesDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/allan/utils/SoundManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/allan/utils/SoundManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/PopUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/PopUp.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -134,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PopUp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PopUp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/PopUp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="70" column="80" lean-forward="true" selection-start-line="70" selection-start-column="80" selection-end-line="70" selection-end-column="80" />
+            <state relative-caret-position="216">
+              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PopUpUtil.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PopUpUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/PopUpUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="262">
-              <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#341#342#0" expanded="true" />
@@ -165,18 +133,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
               <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scheme.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scheme.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret column="7" selection-start-column="7" selection-end-column="7" />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -215,17 +171,17 @@
         <option value="$PROJECT_DIR$/src/main/resources/fxml/properties.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/allan/utils/MusicPlay.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/scheme.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/allan/utils/BeanFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/allan/application/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/allan/controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/allan/controller/PropertiesController.java" />
-        <option value="$PROJECT_DIR$/src/test/PopUp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/allan/utils/SoundManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/allan/dao/PropertiesDAO.java" />
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/src/test/PropertiesTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/allan/utils/PopUpUtil.java" />
+        <option value="$PROJECT_DIR$/scheme.md" />
+        <option value="$PROJECT_DIR$/src/test/PopUp.java" />
       </list>
     </option>
   </component>
@@ -266,9 +222,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="91" />
-    <option name="y" value="240" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="207" />
+    <option name="y" value="141" />
     <option name="width" value="1703" />
     <option name="height" value="944" />
   </component>
@@ -582,8 +538,16 @@
       <workItem from="1549010962346" duration="1057000" />
       <workItem from="1549522846110" duration="8877000" />
       <workItem from="1549587458086" duration="14218000" />
-      <workItem from="1550795773986" duration="12580000" />
+      <workItem from="1550795773986" duration="13988000" />
     </task>
+    <task id="LOCAL-00001" summary="idea git test">
+      <created>1550839694938</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1550839694938</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -607,10 +571,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104041000" />
+    <option name="totallyTimeSpent" value="105449000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="73" y="192" width="1362" height="755" extended-state="0" />
+    <frame x="-7" y="-7" width="1488" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -622,12 +586,12 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.14993216" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39969134" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.27626458" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39969134" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22626112" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20691994" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -653,8 +617,38 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="idea git test" />
+    <option name="LAST_COMMIT_MESSAGE" value="idea git test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -931,16 +925,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scheme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="7" selection-start-column="7" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/SoundManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-340">
@@ -948,13 +932,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -981,24 +958,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/PopUp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="70" column="80" lean-forward="true" selection-start-line="70" selection-start-column="80" selection-end-line="70" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/allan/utils/PopUpUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#341#342#0" expanded="true" />
             <element signature="e#423#424#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="48">
+            <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/PopUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
