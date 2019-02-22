@@ -26,6 +26,7 @@ import java.io.IOException;
 
 public class PopUp extends Application {
     //this is local change
+    //this is remote server's change
     public void showTimedDialog(long time, String message)
             throws ParserConfigurationException, SAXException, IOException {
         Stage popup = new Stage();
