@@ -1,7 +1,9 @@
 package test;
 
 import com.allan.dao.PropertiesDAO;
+import com.allan.domain.PopUp;
 import com.allan.utils.MusicPlay;
+import com.allan.utils.PopUpUtil;
 import com.allan.utils.TTS;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -12,11 +14,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
-import javafx.scene.shape.Shape;
 import javafx.scene.text.Font;
 import javafx.stage.*;
 import org.xml.sax.SAXException;
@@ -24,9 +24,8 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
-public class PopUp extends Application {
-    //this is local change
-    //this is remote server's change
+public class PopUpTest extends Application {
+
     public void showTimedDialog(long time, String message)
             throws ParserConfigurationException, SAXException, IOException {
         Stage popup = new Stage();
@@ -37,19 +36,21 @@ public class PopUp extends Application {
 //		    popup.getIcons().add(new Image("/application/eye_tray.png"));
         Button closeBtn = new Button("Got it!");
 //        closeBtn.setStyle("-fx-background:rgba(231,87,161,0.12);");
-        closeBtn.setStyle("-fx-font: 10 arial; -fx-base: rgba(94,99,93,0.4);");
+        closeBtn.setStyle("-fx-font: 14 arial; -fx-base: rgba(235,255,221,0.4);");
+        closeBtn.setMaxSize(60,40);
+        closeBtn.setPrefSize(60,40);
         closeBtn.setFocusTraversable(false);//设置默认显示时不获取焦点
         closeBtn.setOnAction(e -> {
             popup.close();
         });
         VBox root = new VBox();
 //        root.setStyle("-fx-background:rgba(255,233,50,0.07);");//VBox要透明
-        root.setPadding(new Insets(10));
+//        root.setPadding(new Insets(19));
         root.setAlignment(Pos.CENTER);//显示位置
-        root.setSpacing(10);
+        root.setSpacing(20);
 
         //eclipse shape
-        DropShadow ds = new DropShadow();
+        /*DropShadow ds = new DropShadow();
         ds.setOffsetY(3.0);
         ds.setColor(Color.color(0.4, 0.4, 0.4));
 
@@ -58,11 +59,11 @@ public class PopUp extends Application {
         ellipse.setCenterY(50.0f);
         ellipse.setRadiusX(50.0f);
         ellipse.setRadiusY(25.0f);
-        ellipse.setEffect(ds);
+        ellipse.setEffect(ds);*/
 //        root.getChildren().add(ellipse);
 
         Label label = new Label(message);
-        label.setFont(new Font("Arial", 14));
+        label.setFont(new Font("Arial", 18));
 //        label.setTextFill(Color.web("#E78CA3"));
         label.setTextFill(Color.color(0.3,0.3,0.3));
         root.getChildren().addAll(label, closeBtn);
@@ -71,14 +72,14 @@ public class PopUp extends Application {
         popup.setScene(scene);
         popup.setTitle("R&O");
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-        popup.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth()/2 - 180);
-        popup.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight()/2 - 130);
-        System.out.println(primaryScreenBounds.getMinX());
-        System.out.println(primaryScreenBounds.getWidth());
-        System.out.println(primaryScreenBounds.getMinY());
-        System.out.println(primaryScreenBounds.getHeight());
-        popup.setWidth(180);
-        popup.setHeight(130);
+        PopUp popUpData = PopUpUtil.getPopUp(primaryScreenBounds.getMinX(), primaryScreenBounds.getMinY(),
+                primaryScreenBounds.getWidth(), primaryScreenBounds.getHeight());
+        popup.setX(popUpData.getX());
+        popup.setY(popUpData.getY());
+        popup.setWidth(popUpData.getWidth());
+        popup.setHeight(popUpData.getHeight());
+        System.out.println("popUpData：" + popUpData);
+
         popup.show();
 
         Thread thread = new Thread(() -> {
@@ -103,7 +104,7 @@ public class PopUp extends Application {
 //    public static void application(String[] args) throws IOException, SAXException, ParserConfigurationException {
 //        Platform.runLater(()->{
 //            try {
-//                new PopUp().showTimedDialog(5000,"什么message");
+//                new PopUpTest().showTimedDialog(5000,"什么message");
 //            } catch (ParserConfigurationException e) {
 //                e.printStackTrace();
 //            } catch (SAXException e) {
@@ -121,7 +122,7 @@ public class PopUp extends Application {
     public void start(Stage primaryStage) throws Exception {
         Platform.runLater(()->{
             try {
-                new PopUp().showTimedDialog(15000,"什么message");
+                new PopUpTest().showTimedDialog(15000,"什么message");
             } catch (ParserConfigurationException e) {
                 e.printStackTrace();
             } catch (SAXException e) {

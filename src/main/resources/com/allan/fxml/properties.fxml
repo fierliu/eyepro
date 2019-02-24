@@ -17,6 +17,27 @@
                </font>
             </Label>
             <CheckBox fx:id="checkBoxPopUp" mnemonicParsing="false" onAction="#checkBoxPopUpHandler" text="ShowPopUp" />
+            <HBox prefHeight="27.0" prefWidth="327.0">
+               <children>
+                  <ChoiceBox fx:id="CBpopUpSize" onAction="#CBpopUpSizeHandler" prefHeight="4.0" prefWidth="100.0">
+                     <String fx:value="small" />
+                     <String fx:value="middle" />
+                     <String fx:value="large" />
+                  </ChoiceBox>
+                  <Label prefHeight="30.0" prefWidth="60.0" text="弹窗大小" />
+               </children>
+            </HBox>
+            <HBox prefHeight="31.0" prefWidth="327.0">
+               <children>
+                  <ChoiceBox fx:id="CBpopUpPosition" onAction="#CBpopUpPositionHandler" prefHeight="31.0" prefWidth="100.0">
+                     <String fx:value="leftBottom" />
+                     <String fx:value="middle" />
+                     <String fx:value="rightBottom" />
+                  </ChoiceBox>
+                  <Label prefHeight="31.0" prefWidth="60.0" text="弹窗位置" />
+               </children>
+            </HBox>
+            <Label text="Label" />
             <Label text="Sound Switch">
             	 <font>
                   <Font name="System Bold" size="18.0" />

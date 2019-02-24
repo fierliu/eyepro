@@ -1,6 +1,7 @@
 package com.allan.utils;
 
 import com.allan.dao.PropertiesDAO;
+import com.allan.domain.PopUp;
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
 
@@ -12,16 +13,48 @@ public class PopUpUtil {
         System.out.println("primaryScreenBounds = " );
     }
 
-    public static double getX(){
-        String position = pdao.readPopUpPosition();
-        System.out.println("position = " + position);
+    public static PopUp getPopUp(double minX, double minY, double screenWidth, double screenHeight){
+        PopUp popUp = new PopUp();
         String size = pdao.readPopUpSize();
-//        return primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth()/2 - 180;
-        return 0;
+        if("small".equals(size)){
+            popUp.setWidth(screenWidth/9);
+            popUp.setHeight(screenHeight/7.7);
+
+        }
+
+        else if("middle".equals(size)){
+
+            popUp.setWidth(screenWidth/4.5);
+            popUp.setHeight(screenHeight/3.9);
+        }
+
+        else if ("large".equals(size)){
+            popUp.setWidth(screenWidth/3);
+            popUp.setHeight(screenHeight/2.6);
+        }
+
+        PopUp popUpCmpl = PopUpUtil.getPopUpPosition(popUp, minX, minY, screenWidth, screenHeight);
+        return popUpCmpl;
     }
 
-    public static double getY(){
-//        return primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight()/2 - 130;
-        return 0;
+    private static PopUp getPopUpPosition(PopUp popUp, double minX, double minY, double screenWidth, double screenHeight){
+        String position = pdao.readPopUpPosition();
+        if ("middle".equals(position)){
+            popUp.setX(minX + (screenWidth - popUp.getWidth())/2);
+            popUp.setY(minY + (screenHeight - popUp.getHeight())/2);
+        }
+
+        else if ("leftBottom".equals(position)){
+            popUp.setX(minX);
+            popUp.setY(minY+ screenHeight - popUp.getHeight());
+        }
+
+        else if ("rightBottom".equals(position)){
+            popUp.setX(minX + screenWidth - popUp.getWidth());
+            popUp.setY(minY + screenHeight - popUp.getHeight());
+        }
+
+        return popUp;
     }
+
 }

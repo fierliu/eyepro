@@ -25,10 +25,8 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import com.allan.controller.Controller;
 import com.allan.dao.PropertiesDAO;
-import com.allan.utils.GetTime;
-import com.allan.utils.MusicPlay;
-import com.allan.utils.SoundManager;
-import com.allan.utils.TTS;
+import com.allan.domain.PopUp;
+import com.allan.utils.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.*;
@@ -130,7 +128,9 @@ public class Main extends Application {
 	    popup.setResizable(false);
 	    popup.initModality(Modality.APPLICATION_MODAL);
 	    Button closeBtn = new Button("Got it!");
-		closeBtn.setStyle("-fx-font: 10 arial; -fx-base: rgba(94,99,93,0.4);");
+		closeBtn.setStyle("-fx-font: 14 arial; -fx-base: rgba(235,255,221,0.4);");
+		closeBtn.setMaxSize(60,40);
+		closeBtn.setPrefSize(60,40);
 		closeBtn.setFocusTraversable(false);//设置默认显示时不获取焦点
 	    closeBtn.setOnAction(e -> {
 	        popup.close();
@@ -140,10 +140,10 @@ public class Main extends Application {
 //	    root.setStyle("-fx-background:rgba(255,233,50,0.25);");//VBox要透明
 	    root.setPadding(new Insets(10));
 	    root.setAlignment(Pos.CENTER);//显示位置
-	    root.setSpacing(10);
+	    root.setSpacing(15);
 
 		Label label = new Label(message);
-		label.setFont(new Font("Arial", 14));
+		label.setFont(new Font("Arial", 18));
 		label.setTextFill(Color.color(0.3,0.3,0.3));
 		root.getChildren().addAll(label, closeBtn);
 
@@ -152,10 +152,12 @@ public class Main extends Application {
 	    popup.setScene(scene);
 	    popup.setTitle("R&O");
 	    Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-	    popup.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() - 180);
-	    popup.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() - 130);
-	    popup.setWidth(180);
-	    popup.setHeight(130);
+		PopUp popUpData = PopUpUtil.getPopUp(primaryScreenBounds.getMinX(), primaryScreenBounds.getMinY(),
+				primaryScreenBounds.getWidth(), primaryScreenBounds.getHeight());
+		popup.setX(popUpData.getX());
+		popup.setY(popUpData.getY());
+		popup.setWidth(popUpData.getWidth());
+		popup.setHeight(popUpData.getHeight());
 	    popup.show();
 
 	    Thread thread = new Thread(() -> {

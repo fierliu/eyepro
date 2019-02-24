@@ -2,8 +2,8 @@
     <breakTime>36000</breakTime>
 
     <popUpSwitch>on</popUpSwitch>
-    <popUpPosition>middle</popUpPosition><!--middle/leftBottom/rightBottom-->
-    <popUpSize>small</popUpSize><!--small/middle/large-->
+    <popUpPosition>leftBottom</popUpPosition><!--middle/leftBottom/rightBottom-->
+    <popUpSize>middle</popUpSize><!--small/middle/large-->
 
     <noticeWord>Beck/Neck</noticeWord>
 

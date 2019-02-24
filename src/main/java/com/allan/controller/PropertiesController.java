@@ -10,19 +10,12 @@ import javax.swing.*;
 import javax.xml.parsers.ParserConfigurationException;
 
 import com.allan.dao.PropertiesDAO;
+import javafx.scene.control.*;
 import org.xml.sax.SAXException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DateCell;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 
@@ -42,13 +35,17 @@ public class PropertiesController implements Initializable{
 	private Label lbNoticeWord, lbNoticeMission, lbNoticeMissionDate;
 	@FXML
 	private DatePicker datePickerMission;
+	@FXML
+	private ChoiceBox CBpopUpPosition,CBpopUpSize;
 	PropertiesDAO pdao;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 		pdao = PropertiesDAO.getInstance();
-		//初始化弹窗开关
+		//初始化弹窗
 		checkBoxPopUp.setSelected(pdao.readPopUpSwitch());
+		CBpopUpPosition.setValue(pdao.readPopUpPosition());
+		CBpopUpSize.setValue(pdao.readPopUpSize());
 		//初始化声音开关
 		if(pdao.readMusicSwich()){
 			radioBtnPlayMusic.setSelected(true);
@@ -193,5 +190,15 @@ public class PropertiesController implements Initializable{
 	public void lbNoticeHandler(ActionEvent event){
 		lbNoticeMission.setText("");
 		lbNoticeWord.setText("");
+	}
+
+	public void CBpopUpPositionHandler(ActionEvent event){
+		String value = (String) CBpopUpPosition.getValue();
+		pdao.writePopUpPosition(value);
+	}
+
+	public void CBpopUpSizeHandler(ActionEvent event){
+		String value = (String) CBpopUpSize.getValue();
+		pdao.writePopUpSize(value);
 	}
 }

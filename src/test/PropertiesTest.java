@@ -22,7 +22,7 @@ public class PropertiesTest {
 
     @Test
     public void popupUtil(){
-        double x = PopUpUtil.getX();
-        System.out.println("x = " + x);
+//        double x = PopUpUtil.getX();
+//        System.out.println("x = " + x);
     }
 }
