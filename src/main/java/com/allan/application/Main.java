@@ -24,6 +24,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.xml.parsers.ParserConfigurationException;
 
 import com.allan.controller.Controller;
+import com.allan.controller.PopupController;
 import com.allan.dao.PropertiesDAO;
 import com.allan.domain.PopUp;
 import com.allan.utils.*;
@@ -56,6 +57,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException, DocumentException {
 		FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/com/allan/fxml/scene.fxml"));
+		setUserAgentStylesheet(STYLESHEET_CASPIAN);
 		Parent root = fxmlloader.load();
 		Scene scene = new Scene(root);
 //		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -86,7 +88,7 @@ public class Main extends Application {
 //            	System.out.println(get_Time());
 //            	Platform.runLater(()->showTimedDialog(300000, "5 Min."));
 //            	-----------半点提醒--------------------------------------------
-				if(get_Time().equals("30:00")){					
+				if(get_Time().equals("30:00")){
 					Platform.runLater(()->{
 						try {
 
@@ -122,51 +124,66 @@ public class Main extends Application {
 	}
 	public void showTimedDialog(long time, String message)
 			throws ParserConfigurationException, SAXException, IOException {
-		Stage popup = new Stage();
-		popup.initStyle(StageStyle.TRANSPARENT);//Stage要没有窗口装饰
-	    popup.setAlwaysOnTop(true);
-	    popup.setResizable(false);
-	    popup.initModality(Modality.APPLICATION_MODAL);
-	    Button closeBtn = new Button("Got it!");
-		closeBtn.setStyle("-fx-font: 14 arial; -fx-base: rgba(235,255,221,0.4);");
-		closeBtn.setMaxSize(60,40);
-		closeBtn.setPrefSize(60,40);
-		closeBtn.setFocusTraversable(false);//设置默认显示时不获取焦点
-	    closeBtn.setOnAction(e -> {
-	        popup.close();
-	    });
-	    VBox root = new VBox();
+//		Stage popup = new Stage();
+//		popup.initStyle(StageStyle.TRANSPARENT);//Stage要没有窗口装饰
+//	    popup.setAlwaysOnTop(true);
+//	    popup.setResizable(false);
+//	    popup.initModality(Modality.APPLICATION_MODAL);
+//	    Button closeBtn = new Button("Got it!");
+//		closeBtn.setStyle("-fx-font: 14 arial; -fx-base: rgba(235,255,221,0.4);");
+//		closeBtn.setMaxSize(60,40);
+//		closeBtn.setPrefSize(60,40);
+//		closeBtn.setFocusTraversable(false);//设置默认显示时不获取焦点
+//	    closeBtn.setOnAction(e -> {
+//	        popup.close();
+//	    });
+//	    VBox root = new VBox();
 //	    root.setStyle("-fx-background:transparent;");//VBox要透明
 //	    root.setStyle("-fx-background:rgba(255,233,50,0.25);");//VBox要透明
-	    root.setPadding(new Insets(10));
-	    root.setAlignment(Pos.CENTER);//显示位置
-	    root.setSpacing(15);
+//	    root.setPadding(new Insets(10));
+//	    root.setAlignment(Pos.CENTER);//显示位置
+//	    root.setSpacing(15);
 
-		Label label = new Label(message);
-		label.setFont(new Font("Arial", 18));
-		label.setTextFill(Color.color(0.3,0.3,0.3));
-		root.getChildren().addAll(label, closeBtn);
+//		Label label = new Label(message);
+//		label.setFont(new Font("Arial", 18));
+//		label.setTextFill(Color.color(0.3,0.3,0.3));
+//		root.getChildren().addAll(label, closeBtn);
 
-	    Scene scene = new Scene(root);
-		scene.setFill(null);//Scene要透明
-	    popup.setScene(scene);
-	    popup.setTitle("R&O");
+//	    Scene scene = new Scene(root);
+//		scene.setFill(null);//Scene要透明
+//	    popup.setScene(scene);
+//	    popup.setTitle("R&O");
+
+		FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/com/allan/fxml/popup.fxml"));
+		Parent root = fxmlloader.load();
+		Scene scene = new Scene(root);
+		scene.setFill(null);
+		PopupController controller = fxmlloader.getController();
+		Stage stage = new Stage();
+//		stage.initStyle(StageStyle.TRANSPARENT);
+		stage.setAlwaysOnTop(true);
+//	    stage.setResizable(false);
+		stage.initModality(Modality.APPLICATION_MODAL);
+		stage.setScene(scene);
+		controller.setStage(stage);
+//		stage.show();
+
 	    Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 		PopUp popUpData = PopUpUtil.getPopUp(primaryScreenBounds.getMinX(), primaryScreenBounds.getMinY(),
 				primaryScreenBounds.getWidth(), primaryScreenBounds.getHeight());
-		popup.setX(popUpData.getX());
-		popup.setY(popUpData.getY());
-		popup.setWidth(popUpData.getWidth());
-		popup.setHeight(popUpData.getHeight());
-	    popup.show();
+		stage.setX(popUpData.getX());
+		stage.setY(popUpData.getY());
+//		stage.setWidth(popUpData.getWidth());
+//		stage.setHeight(popUpData.getHeight());
+	    stage.show();
 
 	    Thread thread = new Thread(() -> {
 	        try {	        	
 	            Thread.sleep(time);
 	            PropertiesDAO p = PropertiesDAO.getInstance();
-	            if (popup.isShowing()) {
+	            if (stage.isShowing()) {
 	                Platform.runLater(() ->
-	                popup.close());
+	                stage.close());
 	            }
 				SoundManager.playSoundTimesUp();
 	        } catch (Exception exp) {

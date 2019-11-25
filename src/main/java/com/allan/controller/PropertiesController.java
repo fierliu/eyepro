@@ -45,7 +45,7 @@ public class PropertiesController implements Initializable{
 		//初始化弹窗
 		checkBoxPopUp.setSelected(pdao.readPopUpSwitch());
 		CBpopUpPosition.setValue(pdao.readPopUpPosition());
-		CBpopUpSize.setValue(pdao.readPopUpSize());
+//		CBpopUpSize.setValue(pdao.readPopUpSize());
 		//初始化声音开关
 		if(pdao.readMusicSwich()){
 			radioBtnPlayMusic.setSelected(true);

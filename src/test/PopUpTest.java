@@ -1,5 +1,6 @@
 package test;
 
+import com.allan.controller.PopupController;
 import com.allan.dao.PropertiesDAO;
 import com.allan.domain.PopUp;
 import com.allan.utils.MusicPlay;
@@ -7,13 +8,16 @@ import com.allan.utils.PopUpUtil;
 import com.allan.utils.TTS;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
@@ -118,16 +122,36 @@ public class PopUpTest extends Application {
 
 //    }
 
+    public void showPopUp(long time, String message) throws IOException {
+        FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/com/allan/fxml/popup.fxml"));
+        Parent root = fxmlloader.load();
+        Scene scene = new Scene(root);
+        scene.setFill(null);
+        PopupController controller = fxmlloader.getController();
+        Stage stage = new Stage();
+//        stage.initStyle(StageStyle.TRANSPARENT);
+
+        stage.getIcons().add(new Image("/com/allan/pics/tr.png"));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setX(23);
+        stage.setY(23);
+        stage.setScene(scene);
+        controller.setStage(stage);
+        stage.show();
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Platform.runLater(()->{
             try {
-                new PopUpTest().showTimedDialog(15000,"什么message");
-            } catch (ParserConfigurationException e) {
+//                new PopUpTest().showTimedDialog(15000,"什么message");
+                setUserAgentStylesheet(STYLESHEET_CASPIAN);
+                new PopUpTest().showPopUp(15000,"什么message");
+            } /*catch (ParserConfigurationException e) {
                 e.printStackTrace();
             } catch (SAXException e) {
                 e.printStackTrace();
-            } catch (IOException e) {
+            }*/ catch (IOException e) {
                 e.printStackTrace();
             }
         });

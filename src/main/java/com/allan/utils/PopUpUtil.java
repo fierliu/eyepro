@@ -40,18 +40,18 @@ public class PopUpUtil {
     private static PopUp getPopUpPosition(PopUp popUp, double minX, double minY, double screenWidth, double screenHeight){
         String position = pdao.readPopUpPosition();
         if ("middle".equals(position)){
-            popUp.setX(minX + (screenWidth - popUp.getWidth())/2);
-            popUp.setY(minY + (screenHeight - popUp.getHeight())/2);
+            popUp.setX(minX + (screenWidth - 505)/2);
+            popUp.setY(minY + (screenHeight - 366)/2);
         }
 
         else if ("leftBottom".equals(position)){
             popUp.setX(minX);
-            popUp.setY(minY+ screenHeight - popUp.getHeight());
+            popUp.setY(minY+ screenHeight - 366);
         }
 
         else if ("rightBottom".equals(position)){
-            popUp.setX(minX + screenWidth - popUp.getWidth());
-            popUp.setY(minY + screenHeight - popUp.getHeight());
+            popUp.setX(minX + screenWidth - 505);
+            popUp.setY(minY + screenHeight - 366);
         }
 
         return popUp;

@@ -34,7 +34,7 @@ public class PropertiesDAO {
 		return InnerObject.propertiesDAO;
 	}
 
-	private PropertiesDAO(){
+	public PropertiesDAO(){
 		dbf = DocumentBuilderFactory.newInstance();
 		try {
 			db = dbf.newDocumentBuilder();

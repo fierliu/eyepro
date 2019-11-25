@@ -1,10 +1,10 @@
 import com.allan.dao.PropertiesDAO;
 import com.allan.utils.PopUpUtil;
-import org.junit.Test;
+//import org.junit.Test;
 
 public class PropertiesTest {
 
-    @Test
+    /*@Test
     public void single(){
         PropertiesDAO propertiesDAO1 = PropertiesDAO.getInstance();
         System.out.println("propertiesDAO1 = " + propertiesDAO1);
@@ -24,5 +24,23 @@ public class PropertiesTest {
     public void popupUtil(){
 //        double x = PopUpUtil.getX();
 //        System.out.println("x = " + x);
-    }
+    }*/
+public static void main(String[] args) {
+method(null);
+}
+public static void method(String param) {
+switch (param) {
+// 肯定不是进入这里
+case "sth":
+System.out.println("it's sth");
+break;
+// 也不是进入这里
+case "null":
+System.out.println("it's null");
+break;
+// 也不是进入这里
+default:
+System.out.println("default");
+}
+}
 }
