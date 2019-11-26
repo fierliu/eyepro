@@ -21,18 +21,6 @@ public class PopUpUtil {
             popUp.setHeight(screenHeight/7.7);
 
         }
-
-        else if("middle".equals(size)){
-
-            popUp.setWidth(screenWidth/4.5);
-            popUp.setHeight(screenHeight/3.9);
-        }
-
-        else if ("large".equals(size)){
-            popUp.setWidth(screenWidth/3);
-            popUp.setHeight(screenHeight/2.6);
-        }
-
         PopUp popUpCmpl = PopUpUtil.getPopUpPosition(popUp, minX, minY, screenWidth, screenHeight);
         return popUpCmpl;
     }

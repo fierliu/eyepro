@@ -18,6 +18,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
@@ -131,12 +133,21 @@ public class PopUpTest extends Application {
         Stage stage = new Stage();
 //        stage.initStyle(StageStyle.TRANSPARENT);
 
+        stage.setAlwaysOnTop(true);
+        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
         stage.getIcons().add(new Image("/com/allan/pics/tr.png"));
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setX(23);
-        stage.setY(23);
+//        stage.initModality(Modality.APPLICATION_MODAL);
+//        stage.setWidth(250);
+//		stage.setHeight(250);
+        stage.setX(primaryScreenBounds.getWidth() - 410);
+        stage.setY(primaryScreenBounds.getHeight() - 315);
         stage.setScene(scene);
         controller.setStage(stage);
+        stage.addEventHandler(KeyEvent.KEY_RELEASED, (KeyEvent event) -> {
+        if (KeyCode.ESCAPE == event.getCode()) {
+            stage.setIconified(true);
+        }
+    });
         stage.show();
     }
 
