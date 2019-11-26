@@ -17,7 +17,7 @@
                </font>
             </Label>
             <CheckBox fx:id="checkBoxPopUp" mnemonicParsing="false" onAction="#checkBoxPopUpHandler" text="ShowPopUp" />
-            <HBox prefHeight="31.0" prefWidth="327.0">
+            <!--<HBox prefHeight="31.0" prefWidth="327.0">
                <children>
                   <ChoiceBox fx:id="CBpopUpPosition" onAction="#CBpopUpPositionHandler" prefHeight="31.0" prefWidth="105.0">
                      <String fx:value="leftBottom" />
@@ -26,8 +26,8 @@
                   </ChoiceBox>
                   <Label prefHeight="31.0" prefWidth="60.0" text="弹窗位置" />
                </children>
-            </HBox>
-            <Label text="Label" />
+            </HBox>-->
+            <!--<Label text="Label" />-->
             <Label text="Sound Switch">
             	 <font>
                   <Font name="System Bold" size="18.0" />
