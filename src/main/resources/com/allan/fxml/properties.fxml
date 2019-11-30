@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -7,16 +8,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="522.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allan.controller.PropertiesController">
+<AnchorPane prefHeight="522.0" prefWidth="389.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allan.controller.PropertiesController">
    <children>
-      <VBox layoutX="9.0" layoutY="11.0" prefHeight="504.0" prefWidth="327.0">
+      <VBox layoutX="9.0" layoutY="11.0" prefHeight="504.0" prefWidth="370.0">
          <children>
             <Label text="Popup Switch">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <CheckBox fx:id="checkBoxPopUp" mnemonicParsing="false" onAction="#checkBoxPopUpHandler" text="ShowPopUp" />
+            <CheckBox fx:id="checkBoxPopUp" mnemonicParsing="false" text="ShowPopUp" />
             <!--<HBox prefHeight="31.0" prefWidth="327.0">
                <children>
                   <ChoiceBox fx:id="CBpopUpPosition" onAction="#CBpopUpPositionHandler" prefHeight="31.0" prefWidth="105.0">
@@ -35,48 +36,49 @@
             </Label>
             <VBox>
                <children>
-                 	<RadioButton fx:id="radioBtnPlayMusic" mnemonicParsing="false" onAction="#radioBtnPlayMusicHandler" text="PlayMusic(平台无关，只能提醒，不能报时)">
+                 	<RadioButton fx:id="radioBtnPlayMusic" mnemonicParsing="false" text="PlayMusic(平台无关，只能提醒，不能报时)">
                      <toggleGroup>
                         <ToggleGroup fx:id="group" />
                      </toggleGroup>
                   </RadioButton>
-                 	<RadioButton fx:id="radioBtnPlayTTS1" mnemonicParsing="false" onAction="#radioBtnPlaySpvTTSHandler" text="PlayTTS-1(Windows平台英文语音)" toggleGroup="$group" />
-                  <RadioButton fx:id="radioBtnPlayTTS2" mnemonicParsing="false" onAction="#radioBtnPlayFreeTTSHandler" text="PlayTTS-2(平台无关英文语音，需jre8-)" toggleGroup="$group" />
-                  <RadioButton fx:id="radioBtnPlayTTS3" mnemonicParsing="false" onAction="#radioBtnPlaySpvTTSChHandler" text="PlayTTS-3(Windows平台中文语音)" toggleGroup="$group" />
-                 	<RadioButton fx:id="radioBtnSilence" mnemonicParsing="false" onAction="#radioBtnSilenceHandler" text="Silence" toggleGroup="$group" />
+                 	<RadioButton fx:id="radioBtnPlayTTS1" mnemonicParsing="false" text="PlayTTS-1(Windows平台英文语音)" toggleGroup="$group" />
+                  <RadioButton fx:id="radioBtnPlayTTS2" mnemonicParsing="false" text="PlayTTS-2(平台无关英文语音，需jre8-)" toggleGroup="$group" />
+                  <RadioButton fx:id="radioBtnPlayTTS3" mnemonicParsing="false" text="PlayTTS-3(Windows平台中文语音)" toggleGroup="$group" />
+                 	<RadioButton fx:id="radioBtnSilence" mnemonicParsing="false" text="Silence" toggleGroup="$group" />
                </children>
             </VBox>
             <Label text="Notice Word">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
-            <HBox>
+            <VBox prefHeight="105.0" prefWidth="370.0">
                <children>
-                  <TextField fx:id="textFieldNoticeWord" prefHeight="13.0" prefWidth="216.0" promptText="Input Notice Word" />
-                  <Button fx:id="btnNoticeWord" mnemonicParsing="false" onAction="#btnNoticeWordHandler" text="Confirm" />
+                  <TextArea fx:id="textAreaNoticeWord" prefHeight="99.0" prefWidth="370.0" promptText="Input Notice Word" wrapText="true" />
                </children>
-            </HBox>
-            <Label fx:id="lbNoticeWord" textFill="#10e12f" />
+            </VBox>
             <Label text="Set Mission">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <HBox>
+            <VBox prefHeight="129.0" prefWidth="370.0">
                <children>
                   <Label text="Set Mission Date    " />
                   <DatePicker fx:id="datePickerMission" onAction="#datePickerMissionHandler" promptText="Chose Mission Date" />
-               </children>
-            </HBox>
-            <Label fx:id="lbNoticeMissionDate" textFill="#0aeb2f" />
-            <HBox>
-               <children>
                   <Label text="Set Mission Name  " />
-                  <TextField fx:id="textFieldMission" />
-                  <Button fx:id="btnMissionName" mnemonicParsing="false" onAction="#btnMissionNameHandler" text="Confirm" />
+                  <TextField fx:id="textFieldMission" promptText="Input Mission Name" />
+               </children>
+            </VBox>
+            <HBox prefHeight="45.0" prefWidth="370.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="269.0" />
+                  <Button fx:id="btnConfirm" mnemonicParsing="false" onAction="#btnConfirmHandler" text="Confirm">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
                </children>
             </HBox>
-            <Label fx:id="lbNoticeMission" textFill="#07f040" />
          </children>
       </VBox>
    </children>

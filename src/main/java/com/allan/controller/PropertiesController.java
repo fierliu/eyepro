@@ -10,6 +10,7 @@ import javax.swing.*;
 import javax.xml.parsers.ParserConfigurationException;
 
 import com.allan.dao.PropertiesDAO;
+import com.allan.domain.Property;
 import javafx.scene.control.*;
 import org.xml.sax.SAXException;
 
@@ -26,41 +27,36 @@ public class PropertiesController implements Initializable{
 	private RadioButton radioBtnPlayMusic, radioBtnPlayTTS1, radioBtnPlayTTS2,
 			radioBtnPlayTTS3, radioBtnSilence;
 	@FXML
-	private ToggleGroup group;
+	private TextField textFieldMission;
 	@FXML
-	private TextField textFieldNoticeWord, textFieldMission;
-	@FXML
-	private Button btnNoticeWord, btnMissionName;
-	@FXML
-	private Label lbNoticeWord, lbNoticeMission, lbNoticeMissionDate;
+	private TextArea textAreaNoticeWord;
 	@FXML
 	private DatePicker datePickerMission;
-	@FXML
-	private ChoiceBox CBpopUpPosition,CBpopUpSize;
-	PropertiesDAO pdao;
+	private Property property;
+	private PropertiesDAO pdao;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
-		pdao = PropertiesDAO.getInstance();
+		this.property = Property.getInstance();
+		this.pdao = PropertiesDAO.getInstance();
 		//初始化弹窗
-		checkBoxPopUp.setSelected(pdao.readPopUpSwitch());
+		checkBoxPopUp.setSelected(property.isPopUpSwitch());
 //		CBpopUpPosition.setValue(pdao.readPopUpPosition());
 //		CBpopUpSize.setValue(pdao.readPopUpSize());
 		//初始化声音开关
-		if(pdao.readMusicSwich()){
+		if(property.isMusicSwith()){
 			radioBtnPlayMusic.setSelected(true);
-		}else if(pdao.readSpvTTSSwitch()){
+		}else if(property.isSpvTTSSwitch()){
 			radioBtnPlayTTS1.setSelected(true);
-		}else if (pdao.readFreeTTSSwitch()){
+		}else if (property.isFreeTTSSwitch()){
 			radioBtnPlayTTS2.setSelected(true);
-		}else if(pdao.readSpvTTSSwitchCh()){
+		}else if(property.isSpvTTSSwitchCh()){
             radioBtnPlayTTS3.setSelected(true);
 		}else {
 			radioBtnSilence.setSelected(true);
 		}
 		//显示提醒文字
-		textFieldNoticeWord.setText(pdao.readNoticeWord());
-		textFieldMission.setText(pdao.readMission());
+		textAreaNoticeWord.setText(property.getNoticeWord());
+		textFieldMission.setText(property.getMission());
 		//			设置早于当日的时间不能选择
 		final Callback<DatePicker, DateCell> dayCellFactory =
 				new Callback<DatePicker, DateCell>() {
@@ -81,80 +77,62 @@ public class PropertiesController implements Initializable{
 		datePickerMission.setDayCellFactory(dayCellFactory);
 
 		//显示已设定的日期
-		LocalDate ld = LocalDate.parse(pdao.readDayCountDown());
+		LocalDate ld = LocalDate.parse(property.getDayCountDown());
 		datePickerMission.setValue(ld);
-//		System.out.println(ld);
-
 	}
 
-	public void checkBoxPopUpHandler(ActionEvent event){
-		if(checkBoxPopUp.isSelected()){
-			pdao.writePopUpSwitch("on");
-		}
-		else{
-			pdao.writePopUpSwitch("off");
-		}
-	}
-
-//-----------------声音handler--------------------
-	public void radioBtnPlayMusicHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
+	public void btnConfirmHandler(ActionEvent event) {
+		if(checkBoxPopUp.isSelected() && !property.isPopUpSwitch()){
+			pdao.setPopUpSwitch(checkBoxPopUp.isSelected() ? "on" : "off");
+        }
+		//以下5个有且只有一个是true
+		int selectSoundOrdinal = 0;
 		if(radioBtnPlayMusic.isSelected()){
-			pdao.writeMusicSound("on");
-			pdao.writeSpvTTSSwitch("off");
-			pdao.writeFreeTTSSwitch("off");
-			pdao.writeSpvTTSSwitchCh("off");
-		}
-	}
-	//windows平台英文语音
-	public void radioBtnPlaySpvTTSHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
+			selectSoundOrdinal = 1;
+        }
+		//windows平台英文语音
 		if(radioBtnPlayTTS1.isSelected()){
-			pdao.writeSpvTTSSwitch("on");
-			pdao.writeMusicSound("off");
-			pdao.writeFreeTTSSwitch("off");
-			pdao.writeSpvTTSSwitchCh("off");
-		}
-	}
-	//windows平台中文语音
-	public void radioBtnPlaySpvTTSChHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
-		if(radioBtnPlayTTS3.isSelected()){
-			pdao.writeSpvTTSSwitchCh("on");
-			pdao.writeSpvTTSSwitch("off");
-			pdao.writeMusicSound("off");
-			pdao.writeFreeTTSSwitch("off");
-		}
-	}
-
-	public void radioBtnPlayFreeTTSHandler(ActionEvent event) throws IOException, SAXException, ParserConfigurationException {
+		    selectSoundOrdinal = 2;
+        }
+		//freetts
 		if(radioBtnPlayTTS2.isSelected()){
-			pdao.writeFreeTTSSwitch("on");
-			pdao.writeSpvTTSSwitch("off");
-			pdao.writeMusicSound("off");
-			pdao.writeSpvTTSSwitchCh("off");
+			selectSoundOrdinal = 3;
 		}
-	}
-
-	public void radioBtnSilenceHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
+		//windows平台中文语音
+		if(radioBtnPlayTTS3.isSelected()){
+		    selectSoundOrdinal = 4;
+        }
+		//silence
 		if(radioBtnSilence.isSelected()){
-			pdao.writeMusicSound("off");
-			pdao.writeSpvTTSSwitch("off");
-			pdao.writeFreeTTSSwitch("off");
-			pdao.writeSpvTTSSwitchCh("off");
+		    selectSoundOrdinal = 5;
+        }
+		//找出property中5个开关是true的那个
+		int propertySoundOrdinal = 0;
+		if(property.isMusicSwith()){
+			propertySoundOrdinal = 1;
 		}
-	}
+		if(property.isSpvTTSSwitch()){
+			propertySoundOrdinal = 2;
+		}
+		if (property.isFreeTTSSwitch()){
+			propertySoundOrdinal = 3;
+		}
+		if(property.isSpvTTSSwitchCh()){
+			propertySoundOrdinal = 4;
+		}
+		if (property.isSilence()){
+			propertySoundOrdinal = 5;
+		}
+		if(selectSoundOrdinal != propertySoundOrdinal){
+			pdao.setSoundSwitch(selectSoundOrdinal);
+		}
 
+		//todo 注意NPE
+		if (!textAreaNoticeWord.getText().equals(property.getNoticeWord())){
+			pdao.setNoticeWord(textAreaNoticeWord.getText());
+		}
 
-	public void btnNoticeWordHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
-		pdao.writeNoticeWord(textFieldNoticeWord.getText());
-		lbNoticeWord.setText("Submitted.");
-	}
-
-	public void datePickerMissionHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
-
-
-//			datePickerMission.setValue(LocalDate.now().plusDays(1));
-
-//			设置日期的格式为yyyy-mm-dd;
-			StringConverter<LocalDate> converter = new StringConverter<LocalDate>() {
+		StringConverter<LocalDate> converter = new StringConverter<LocalDate>() {
 			DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			@Override
 			public String toString(LocalDate date) {
@@ -167,38 +145,25 @@ public class PropertiesController implements Initializable{
 			@Override
 			public LocalDate fromString(String string) {
 				if (string != null && !string.isEmpty()) {
-				 return LocalDate.parse(string, dateFormatter);
+					return LocalDate.parse(string, dateFormatter);
 				} else {
 					return null;
 				}
 			}
 		};
 		datePickerMission.setConverter(converter);
-		LocalDate s = datePickerMission.getValue();
-//		System.out.println(s);
+		LocalDate localDate = datePickerMission.getValue();
+		pdao.setDayCountDown(localDate.toString());
 
-//		pdao = new PropertiesDAO();
-		pdao.writeDayCountDown(s.toString());
-		lbNoticeMissionDate.setText("Submitted, this will go into effect after the program restart.");
+		pdao.setMission(textFieldMission.getText());
+
+		pdao.saveXml();
+
+		Alert alert = new Alert(Alert.AlertType.INFORMATION);
+		alert.setTitle("提示");
+		alert.setHeaderText(" ");
+		alert.setContentText("保存成功");
+		alert.showAndWait();
 	}
 
-	public void btnMissionNameHandler(ActionEvent event) throws ParserConfigurationException, SAXException, IOException{
-		pdao.writeMission(textFieldMission.getText());
-		lbNoticeMission.setText("Submitted, this will go into effect after the program restart.");
-	}
-
-	public void lbNoticeHandler(ActionEvent event){
-		lbNoticeMission.setText("");
-		lbNoticeWord.setText("");
-	}
-
-	public void CBpopUpPositionHandler(ActionEvent event){
-		String value = (String) CBpopUpPosition.getValue();
-		pdao.writePopUpPosition(value);
-	}
-
-	public void CBpopUpSizeHandler(ActionEvent event){
-		String value = (String) CBpopUpSize.getValue();
-		pdao.writePopUpSize(value);
-	}
 }

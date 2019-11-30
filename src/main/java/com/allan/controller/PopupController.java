@@ -1,6 +1,7 @@
 package com.allan.controller;
 
 import com.allan.dao.PropertiesDAO;
+import com.allan.domain.Property;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,11 +23,12 @@ public class PopupController implements Initializable {
     private Label lbMsg;
 
     private Stage stage;
+    private Property property;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        PropertiesDAO propertiesDAO = new PropertiesDAO();
-        lbMsg.setText(propertiesDAO.readNoticeWord());
+        this.property = Property.getInstance();
+        lbMsg.setText(property.getNoticeWord());
     }
 
     public void setStage(Stage stage){

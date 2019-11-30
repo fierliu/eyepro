@@ -2,19 +2,19 @@
     <breakTime>36000</breakTime>
 
     <popUpSwitch>on</popUpSwitch>
-    <popUpPosition>rightBottom</popUpPosition><!--middle/leftBottom/rightBottom-->
-    <popUpSize>middle</popUpSize><!--small/middle/large-->
+    <!--<popUpPosition>rightBottom</popUpPosition>-->
+    <popUpSize>middle</popUpSize>
 
-    <noticeWord>Beck/Neck</noticeWord>
+    <noticeWord>没问题</noticeWord>
 
     <musicSwith>off</musicSwith>
     <!--windows平台英文语音-->
     <SpvTTSSwitch>off</SpvTTSSwitch>
     <!--windos平台中文语音-->
-    <SpvTTSSwitchCh>on</SpvTTSSwitchCh>
+    <SpvTTSSwitchCh>off</SpvTTSSwitchCh>
     <FreeTTSSwitch>off</FreeTTSSwitch>
-
-    <dayCountDown>2019-04-03</dayCountDown>        	    
+    <silence>on</silence>
+    <dayCountDown>2019-12-31</dayCountDown>        	    
     <mission>Job2</mission>
 
 

@@ -12,12 +12,12 @@
    <children>
       <VBox prefHeight="320.0" prefWidth="400.0">
          <children>
-            <Label fx:id="lbMsg" alignment="CENTER" prefHeight="322.0" prefWidth="400.0" text="Label" wrapText="true">
+            <Label fx:id="lbMsg" alignment="CENTER" prefHeight="322.0" prefWidth="400.0" text="label" wrapText="true">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
                <padding>
-                  <Insets bottom="30.0" />
+                  <Insets bottom="30.0" left="10.0" right="10.0" />
                </padding></Label>
          </children>
       </VBox>

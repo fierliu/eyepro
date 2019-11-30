@@ -1,8 +1,5 @@
 package com.allan.application;
-/*
 
- * 另外PopUp占用的内存也有点高，是否能改用其他形式进行优化？
- */
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
 import java.awt.TrayIcon;
@@ -18,21 +15,16 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
-import javax.media.NoPlayerException;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.xml.parsers.ParserConfigurationException;
 
 import com.allan.controller.Controller;
 import com.allan.controller.PopupController;
 import com.allan.dao.PropertiesDAO;
-import com.allan.domain.PopUp;
+import com.allan.domain.Property;
 import com.allan.utils.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.stage.*;
 import org.dom4j.DocumentException;
 import org.xml.sax.SAXException;
@@ -41,24 +33,22 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
 
 public class Main extends Application {
 	public String time;
 	private TrayIcon trayIcon;
+	private Property property;
 
 	public void init() throws ParserConfigurationException, SAXException, IOException{
 
 	}
 	@Override
 	public void start(Stage primaryStage) throws IOException, DocumentException {
+		PropertiesDAO.getInstance().load();
+		this.property = Property.getInstance();
 		FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/com/allan/fxml/scene.fxml"));
 		setUserAgentStylesheet(STYLESHEET_CASPIAN);
 		Parent root = fxmlloader.load();
@@ -87,7 +77,6 @@ public class Main extends Application {
 		Timer timer = new Timer();
         TimerTask  timerTask = new TimerTask (){
             public void run() {
-				PropertiesDAO p = PropertiesDAO.getInstance();
 //            	System.out.println(get_Time());
 //            	Platform.runLater(()->showTimedDialog(300000, "5 Min."));
 //            	-----------半点提醒--------------------------------------------
@@ -95,8 +84,8 @@ public class Main extends Application {
 					Platform.runLater(()->{
 						try {
 
-							if(p.readPopUpSwitch()) {
-								showTimedDialog(120000, p.readNoticeWord());
+							if(property.isPopUpSwitch()) {
+								showTimedDialog(120000);
 								setUserAgentStylesheet(STYLESHEET_CASPIAN);
 							}
                             SoundManager.playSound(SoundManager.HALF);
@@ -108,9 +97,8 @@ public class Main extends Application {
 				}else if(get_Time().equals("00:00")){
 					Platform.runLater(()->{
 						try {
-//							PropertiesDAO p = new PropertiesDAO();
-							if(p.readPopUpSwitch()) {
-								showTimedDialog(300000, p.readNoticeWord());
+							if(property.isPopUpSwitch()) {
+								showTimedDialog(300000);
 								setUserAgentStylesheet(STYLESHEET_CASPIAN);
 							}
 							SoundManager.playSound(SoundManager.SHARP);
@@ -131,7 +119,7 @@ public class Main extends Application {
         time = format.format(date);
         return time;
 	}
-	public void showTimedDialog(long time, String message)
+	public void showTimedDialog(long time)
 			throws ParserConfigurationException, SAXException, IOException {
 		FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/com/allan/fxml/popup.fxml"));
 		Parent root = fxmlloader.load();
@@ -158,7 +146,6 @@ public class Main extends Application {
 	    Thread thread = new Thread(() -> {
 	        try {	        	
 	            Thread.sleep(time);
-	            PropertiesDAO p = PropertiesDAO.getInstance();
 	            if (stage.isShowing()) {
 	                Platform.runLater(() ->
 	                stage.close());
