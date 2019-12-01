@@ -127,7 +127,6 @@ public class PropertiesController implements Initializable{
 			pdao.setSoundSwitch(selectSoundOrdinal);
 		}
 
-		//todo 注意NPE
 		if (!textAreaNoticeWord.getText().equals(property.getNoticeWord())){
 			pdao.setNoticeWord(textAreaNoticeWord.getText());
 		}

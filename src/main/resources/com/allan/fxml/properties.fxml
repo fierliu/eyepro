@@ -64,7 +64,7 @@
             <VBox prefHeight="129.0" prefWidth="370.0">
                <children>
                   <Label text="Set Mission Date    " />
-                  <DatePicker fx:id="datePickerMission" onAction="#datePickerMissionHandler" promptText="Chose Mission Date" />
+                  <DatePicker fx:id="datePickerMission" promptText="Chose Mission Date" />
                   <Label text="Set Mission Name  " />
                   <TextField fx:id="textFieldMission" promptText="Input Mission Name" />
                </children>

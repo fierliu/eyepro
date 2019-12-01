@@ -83,29 +83,28 @@ public class Main extends Application {
 				if(get_Time().equals("30:00")){
 					Platform.runLater(()->{
 						try {
-
 							if(property.isPopUpSwitch()) {
 								showTimedDialog(120000);
 								setUserAgentStylesheet(STYLESHEET_CASPIAN);
 							}
-                            SoundManager.playSound(SoundManager.HALF);
 						} catch (ParserConfigurationException | SAXException | IOException e) {
 							e.printStackTrace();
 						}
 					});
+					SoundManager.playSound(SoundManager.HALF);
 //					-------------整点提醒-------------------------
-				}else if(get_Time().equals("00:00")){
+				}else if(get_Time().equals("09:30")){
 					Platform.runLater(()->{
 						try {
 							if(property.isPopUpSwitch()) {
 								showTimedDialog(300000);
 								setUserAgentStylesheet(STYLESHEET_CASPIAN);
 							}
-							SoundManager.playSound(SoundManager.SHARP);
 						} catch (ParserConfigurationException | SAXException | IOException e) {
 							e.printStackTrace();
 						}
 					});
+					SoundManager.playSound(SoundManager.SHARP);
 				}
             }
         };
