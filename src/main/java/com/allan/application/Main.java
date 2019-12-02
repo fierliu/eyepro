@@ -26,7 +26,6 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.*;
-import org.dom4j.DocumentException;
 import org.xml.sax.SAXException;
 
 import javafx.application.Application;
@@ -46,7 +45,7 @@ public class Main extends Application {
 
 	}
 	@Override
-	public void start(Stage primaryStage) throws IOException, DocumentException {
+	public void start(Stage primaryStage) throws IOException {
 		PropertiesDAO.getInstance().load();
 		this.property = Property.getInstance();
 		FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/com/allan/fxml/scene.fxml"));
