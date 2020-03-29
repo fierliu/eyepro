@@ -1,4 +1,4 @@
-package test;
+//package test;
 
 import com.allan.controller.PopupController;
 import com.allan.dao.PropertiesDAO;
@@ -9,22 +9,23 @@ import com.allan.utils.TTS;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Ellipse;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
-import javafx.stage.*;
+import javafx.stage.Modality;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -32,8 +33,7 @@ import java.io.IOException;
 
 public class PopUpTest extends Application {
 
-    public void showTimedDialog(long time, String message)
-            throws ParserConfigurationException, SAXException, IOException {
+    public void showTimedDialog(long time, String message){
         Stage popup = new Stage();
         popup.initStyle(StageStyle.TRANSPARENT);//Stage要没有窗口装饰
         popup.setAlwaysOnTop(true);
@@ -128,7 +128,7 @@ public class PopUpTest extends Application {
         FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/com/allan/fxml/popup.fxml"));
         Parent root = fxmlloader.load();
         Scene scene = new Scene(root);
-        scene.setFill(null);
+        scene.setFill(Color.TAN);
         PopupController controller = fxmlloader.getController();
         Stage stage = new Stage();
 //        stage.initStyle(StageStyle.TRANSPARENT);
@@ -139,7 +139,9 @@ public class PopUpTest extends Application {
 //        stage.initModality(Modality.APPLICATION_MODAL);
 //        stage.setWidth(250);
 //		stage.setHeight(250);
-        stage.setX(primaryScreenBounds.getWidth() - 410);
+//        stage.setX(primaryScreenBounds.getWidth() - 410);
+//        stage.setY(primaryScreenBounds.getHeight() - 315);
+        stage.setX(-8);
         stage.setY(primaryScreenBounds.getHeight() - 315);
         stage.setScene(scene);
         controller.setStage(stage);

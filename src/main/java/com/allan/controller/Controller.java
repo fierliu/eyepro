@@ -43,7 +43,6 @@ public class Controller implements Initializable{
 				lbCountDown.setText(GetTime.getDifferenceDays(pd.readDayCountDown())
 						+ " days away from " + pd.readMission());
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}else{
