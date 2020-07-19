@@ -8,19 +8,16 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
 import javax.xml.parsers.ParserConfigurationException;
 
-import com.allan.controller.Controller;
+import com.allan.controller.MainController;
 import com.allan.controller.PopupController;
-import com.allan.dao.PropertiesDAO;
-import com.allan.domain.Property;
+import com.allan.dao.ConfigDao;
+import com.allan.domain.Config;
 import com.allan.utils.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -38,23 +35,23 @@ import javafx.scene.Scene;
 
 public class Main extends Application {
 	private TrayIcon trayIcon;
-	private Property property;
+	private Config config;
 
 	public void init() throws ParserConfigurationException, SAXException, IOException{
-
 	}
+
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		PropertiesDAO.getInstance().load();
-		this.property = Property.getInstance();
+		new ConfigDao().load();//加载配置
+		config = Cache.getCache().getConfigCache();
 		FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/com/allan/fxml/scene.fxml"));
 		setUserAgentStylesheet(STYLESHEET_CASPIAN);
 		Parent root = fxmlloader.load();
 		Scene scene = new Scene(root);
 //		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		Controller controller = fxmlloader.getController();
+		MainController mainController = fxmlloader.getController();
 		//传递primaryStage参数给Controller
-		controller.setStage(primaryStage);
+		mainController.setStage(primaryStage);
 //		primaryStage.getIcons().add(new Image("/application/eye_tray.png"));
 		primaryStage.setTitle("EyePro");
 		//terminate the all threads when close button clicked.
@@ -79,7 +76,7 @@ public class Main extends Application {
 				if(TimeUtil.getCurrentTimeString().equals("30:00")){
 					Platform.runLater(()->{
 						try {
-							if(property.isPopUpSwitch()) {
+							if("Y".equals(config.getPopupOn())) {
 								showTimedDialog(120000);
 								setUserAgentStylesheet(STYLESHEET_CASPIAN);
 							}
@@ -92,7 +89,7 @@ public class Main extends Application {
 				}else if(TimeUtil.getCurrentTimeString().equals("00:00")){
 					Platform.runLater(()->{
 						try {
-							if(property.isPopUpSwitch()) {
+							if("Y".equals(config.getPopupOn())) {
 								showTimedDialog(300000);
 								setUserAgentStylesheet(STYLESHEET_CASPIAN);
 							}
@@ -253,8 +250,8 @@ public class Main extends Application {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
+
 	public static void main(String[] args) {
 		launch(args);
 	}

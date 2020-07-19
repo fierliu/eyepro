@@ -1,8 +1,15 @@
 Manifest-Version: 1.0
-Class-Path: . lib/cmu_time_awb.jar lib/cmu_us_kal.jar lib/cmudict04.ja
- r lib/cmulex.jar lib/dom4j-1.6.1.jar lib/jmf-2.1.1e.jar lib/customize
- r.jar lib/jmf.jar lib/en_us.jar lib/freetts.jar lib/freetts-jsapi10.j
- ar lib/jsapi.jar lib/mbrola.jar lib/mediaplayer.jar lib/multiplayer.j
- ar lib/sound.jar lib/jacob.jar
 Main-Class: com.allan.application.Main
+Class-Path: cmu_time_awb.jar cmu_us_kal.jar customizer.jar en_us.jar fre
+ etts-jsapi10.jar freetts.jar jacob.jar jmf-2.1.1e.jar jmf.jar jsapi.jar
+  mbrola.jar mediaplayer.jar multiplayer.jar sound.jar sqlite-jdbc-3.23.
+ 1.jar spring-jdbc-5.0.3.RELEASE.jar spring-tx-5.0.2.RELEASE.jar spring-
+ core-5.0.2.RELEASE.jar c3p0-0.9.1.1.jar org.apache.commons.logging_1.1.
+ 1.v201101211721.jar jmf.jar en_us.jar jacob.jar jsapi.jar sound.jar cmu
+ lex.jar mbrola.jar freetts.jar cmudict04.jar cmu_us_kal.jar cmutimelex.
+ jar customizer.jar jmf-2.1.1e.jar mediaplayer.jar multiplayer.jar c3p0-
+ 0.9.1.1.jar cmu_time_awb.jar freetts-jsapi10.jar sqlite-jdbc-3.23.1.jar
+  spring-tx-5.0.2.RELEASE.jar spring-core-5.0.2.RELEASE.jar spring-jdbc-
+ 5.0.3.RELEASE.jar spring-beans-5.0.5.RELEASE.jar org.apache.commons.log
+ ging_1.1.1.v201101211721.jar
 

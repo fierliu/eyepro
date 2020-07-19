@@ -1,14 +1,13 @@
 package com.allan.controller;
 
-import com.allan.dao.PropertiesDAO;
-import com.allan.domain.Property;
+import com.allan.domain.Config;
+import com.allan.utils.Cache;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -23,12 +22,12 @@ public class PopupController implements Initializable {
     private Label lbMsg;
 
     private Stage stage;
-    private Property property;
+    private Config config;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.property = Property.getInstance();
-        lbMsg.setText(property.getNoticeWord());
+        this.config = Cache.getCache().getConfigCache();
+        lbMsg.setText(config.getNoticeText());
     }
 
     public void setStage(Stage stage){

@@ -1,7 +1,7 @@
 //package test;
 
 import com.allan.controller.PopupController;
-import com.allan.dao.PropertiesDAO;
+import com.allan.dao.ConfigDao;
 import com.allan.domain.PopUp;
 import com.allan.utils.MusicPlay;
 import com.allan.utils.PopUpUtil;
@@ -20,15 +20,12 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class PopUpTest extends Application {
@@ -88,23 +85,23 @@ public class PopUpTest extends Application {
 
         popup.show();
 
-        Thread thread = new Thread(() -> {
-            try {
-                Thread.sleep(time);
-                PropertiesDAO p = PropertiesDAO.getInstance();
-                if (popup.isShowing()) {
-                    Platform.runLater(() ->
-                            popup.close());
-                }
-                if(p.readMusicSwich()) MusicPlay.playOnce("Devils_Never_Cry.wav");
-                else if(p.readSpvTTSSwitch()) TTS.playSpVoiceTTS("Time's up!");
-                else if(p.readFreeTTSSwitch()) TTS.playFreeTTS("Time's up!");
-            } catch (Exception exp) {
-                exp.printStackTrace();
-            }
-        });
-        thread.setDaemon(true);
-        thread.start();
+//        Thread thread = new Thread(() -> {
+//            try {
+//                Thread.sleep(time);
+//                ConfigDao p = ConfigDao.getInstance();
+//                if (popup.isShowing()) {
+//                    Platform.runLater(() ->
+//                            popup.close());
+//                }
+//                if(p.readMusicSwich()) MusicPlay.playOnce("Devils_Never_Cry.wav");
+//                else if(p.readSpvTTSSwitch()) TTS.playSpVoiceTTS("Time's up!");
+//                else if(p.readFreeTTSSwitch()) TTS.playFreeTTS("Time's up!");
+//            } catch (Exception exp) {
+//                exp.printStackTrace();
+//            }
+//        });
+//        thread.setDaemon(true);
+//        thread.start();
     }
 
 //    public static void application(String[] args) throws IOException, SAXException, ParserConfigurationException {

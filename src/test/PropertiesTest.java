@@ -1,35 +1,22 @@
-import com.allan.dao.PropertiesDAO;
-import com.allan.utils.PopUpUtil;
+import com.allan.dao.ConfigDao;
+import com.allan.domain.Config;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.SingleColumnRowMapper;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import java.util.List;
 //import org.junit.Test;
 
 public class PropertiesTest {
 
-    /*@Test
-    public void single(){
-        PropertiesDAO propertiesDAO1 = PropertiesDAO.getInstance();
-        System.out.println("propertiesDAO1 = " + propertiesDAO1);
-        PropertiesDAO propertiesDAO2 = PropertiesDAO.getInstance();
-        System.out.println("propertiesDAO2 = " + propertiesDAO2);
-    }
-
-    @Test
-    public void popUpPosition(){
-        PropertiesDAO propertiesDAO1 = PropertiesDAO.getInstance();
-        propertiesDAO1.writePopUpPosition("middle");
-        String s = propertiesDAO1.readPopUpPosition();
-        System.out.println("s = " + s);
-    }
-
-    @Test
-    public void popupUtil(){
-//        double x = PopUpUtil.getX();
-//        System.out.println("x = " + x);
-    }*/
 
     public static void main(String[] args) {
 
-        "".equals("");
+        ConfigDao configDao = new ConfigDao();
+        Config config = new Config();
+        config.setFreettsOn("Y");
+        config.setSpvttsOn("Y");
+        configDao.updateConfig(config);
     }
-    public void test(){
-    }
+
 }

@@ -1,6 +1,7 @@
 package com.allan.utils;
 
-import com.allan.dao.PropertiesDAO;
+import com.allan.dao.ConfigDao;
+import com.allan.domain.Config;
 
 import java.io.IOException;
 
@@ -8,55 +9,55 @@ public class SoundManager {
 
     public static final String HALF = "half";
     public static final String SHARP = "sharp";
-    private static PropertiesDAO propertiesDAO = PropertiesDAO.getInstance();
+    private static Config config = new ConfigDao().findAll();
 
     public static void playSound(String word){
 
         String chTimeString = SoundManager.getTimeString("ch");
         String enTimeString = SoundManager.getTimeString("en");
-        if("half".equals(word) && !"sharp".equals(word)){
-            if(propertiesDAO.readMusicSwich()) {
+        if("half".equals(word)){
+            if("Y".equals(config.getMusicOn())) {
                 try {
                     MusicPlay.playOnce("2 minutes.wav");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-            else if(propertiesDAO.readSpvTTSSwitch())
+            else if("Y".equals(config.getSpvttsOn()))
                 TTS.playSpVoiceTTS(enTimeString);
-            else if(propertiesDAO.readFreeTTSSwitch())
+            else if("Y".equals(config.getFreettsOn()))
                 TTS.playFreeTTS(enTimeString);
-            else if(propertiesDAO.readSpvTTSSwitchCh())
+            else if("Y".equals(config.getSpvttsChOn()))
                 TTS.playSpVoiceTTS(chTimeString);
         }
-        if("sharp".equals(word) && !"half".equals(word)){
-            if(propertiesDAO.readMusicSwich()) {
+        if("sharp".equals(word)){
+            if("Y".equals(config.getMusicOn())) {
                 try {
                     MusicPlay.playOnce("2 minutes.wav");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-            else if(propertiesDAO.readSpvTTSSwitch())
+            else if("Y".equals(config.getSpvttsOn()))
                 TTS.playSpVoiceTTS(enTimeString);
-            else if(propertiesDAO.readFreeTTSSwitch())
+            else if("Y".equals(config.getFreettsOn()))
                 TTS.playFreeTTS(enTimeString);
-            else if(propertiesDAO.readSpvTTSSwitchCh())
+            else if("Y".equals(config.getSpvttsChOn()))
                 TTS.playSpVoiceTTS(chTimeString);
         }
 
     }
 
     public static void playSoundTimesUp(){
-        if(propertiesDAO.readSpvTTSSwitchCh()) TTS.playSpVoiceTTS("时间到。");
-        else if(propertiesDAO.readMusicSwich()) {
+        if("Y".equals(config.getSpvttsChOn())) TTS.playSpVoiceTTS("时间到。");
+        else if("Y".equals(config.getMusicOn())) {
             try {
                 MusicPlay.playOnce("Devils_Never_Cry.wav");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else if (propertiesDAO.readSpvTTSSwitch()) TTS.playSpVoiceTTS("Time's up!");
-        else if(propertiesDAO.readFreeTTSSwitch()) TTS.playSpVoiceTTS("Time's up!");
+        }else if ("Y".equals(config.getSpvttsOn())) TTS.playSpVoiceTTS("Time's up!");
+        else if("Y".equals(config.getFreettsOn())) TTS.playSpVoiceTTS("Time's up!");
 
 
     }

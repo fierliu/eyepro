@@ -1,13 +1,13 @@
 package com.allan.utils;
 
-import com.allan.dao.PropertiesDAO;
+import com.allan.dao.ConfigDao;
+import com.allan.domain.Config;
 import com.allan.domain.PopUp;
-import javafx.geometry.Rectangle2D;
-import javafx.stage.Screen;
 
 public class PopUpUtil {
 
-    private static PropertiesDAO pdao = PropertiesDAO.getInstance();
+//    private ConfigDao pdao = new ConfigDao();
+    private static Config config = new ConfigDao().findAll();
 
     public PopUpUtil(){
         System.out.println("primaryScreenBounds = " );
@@ -15,7 +15,8 @@ public class PopUpUtil {
 
     public static PopUp getPopUp(double minX, double minY, double screenWidth, double screenHeight){
         PopUp popUp = new PopUp();
-        String size = pdao.readPopUpSize();
+
+        String size = config.getPopupSize();
         if("small".equals(size)){
             popUp.setWidth(screenWidth/9);
             popUp.setHeight(screenHeight/7.7);
@@ -26,7 +27,7 @@ public class PopUpUtil {
     }
 
     private static PopUp getPopUpPosition(PopUp popUp, double minX, double minY, double screenWidth, double screenHeight){
-        String position = pdao.readPopUpPosition();
+        String position = config.getPopupSize();
         if ("middle".equals(position)){
             popUp.setX(minX + (screenWidth - 505)/2);
             popUp.setY(minY + (screenHeight - 366)/2);
