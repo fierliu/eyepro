@@ -37,7 +37,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class Main extends Application {
-	public String time;
 	private TrayIcon trayIcon;
 	private Property property;
 
@@ -76,10 +75,8 @@ public class Main extends Application {
 		Timer timer = new Timer();
         TimerTask  timerTask = new TimerTask (){
             public void run() {
-//            	System.out.println(get_Time());
-//            	Platform.runLater(()->showTimedDialog(300000, "5 Min."));
 //            	-----------半点提醒--------------------------------------------
-				if(get_Time().equals("30:00")){
+				if(TimeUtil.getCurrentTimeString().equals("30:00")){
 					Platform.runLater(()->{
 						try {
 							if(property.isPopUpSwitch()) {
@@ -92,7 +89,7 @@ public class Main extends Application {
 					});
 					SoundManager.playSound(SoundManager.HALF);
 //					-------------整点提醒-------------------------
-				}else if(get_Time().equals("00:00")){
+				}else if(TimeUtil.getCurrentTimeString().equals("00:00")){
 					Platform.runLater(()->{
 						try {
 							if(property.isPopUpSwitch()) {
@@ -110,13 +107,7 @@ public class Main extends Application {
         timer.schedule (timerTask, 0, 1000);
 	}
 
-	public String get_Time() {
-        Calendar calendar = Calendar.getInstance();
-        Date date = (Date) calendar.getTime();
-        SimpleDateFormat format = new SimpleDateFormat("mm:ss");
-        time = format.format(date);
-        return time;
-	}
+
 	public void showTimedDialog(long time) throws IOException {
 		FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/com/allan/fxml/popup.fxml"));
 		Parent root = fxmlloader.load();

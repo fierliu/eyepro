@@ -1,18 +1,13 @@
 package com.allan.controller;
 
-import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-import javax.xml.parsers.ParserConfigurationException;
-
 import com.allan.domain.Property;
-import com.allan.utils.GetTime;
-import com.allan.dao.PropertiesDAO;
-import org.xml.sax.SAXException;
+import com.allan.utils.TimeUtil;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -42,7 +37,7 @@ public class Controller implements Initializable{
 			lbCountDownTitle.setText("Count Down");
 			try {
 
-				lbCountDown.setText(GetTime.getDifferenceDays(property.getDayCountDown())
+				lbCountDown.setText(TimeUtil.getDifferenceDays(property.getDayCountDown())
 						+ " days away from " + property.getMission());
 			} catch (ParseException e) {
 				e.printStackTrace();

@@ -1,12 +1,7 @@
 package com.allan.utils;
 
 import com.allan.dao.PropertiesDAO;
-import org.xml.sax.SAXException;
 
-import javax.media.NoPlayerException;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class SoundManager {
@@ -67,7 +62,7 @@ public class SoundManager {
     }
 
     private static String getTimeString(String language){
-        String time = GetTime.getSharpAndHalfTime();
+        String time = TimeUtil.getSharpAndHalfTime();
         if("ch".equals(language)){
             time = "现在时间是 "+ time;
         }
