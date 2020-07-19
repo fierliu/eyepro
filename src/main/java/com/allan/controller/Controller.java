@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import com.allan.domain.Property;
 import com.allan.utils.GetTime;
 import com.allan.dao.PropertiesDAO;
 import org.xml.sax.SAXException;
@@ -32,16 +33,17 @@ public class Controller implements Initializable{
 	private Button btnQuit, getTimeBtn, getTimeBtn1, getTimeBtn2;
 	@SuppressWarnings("unused")
 	private Stage stage;
+	private Property property;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//count down handler
-		PropertiesDAO pd = PropertiesDAO.getInstance();
-		if(pd.readDayCountDown() != ""){
+		property = Property.getInstance();
+		if(property.getDayCountDown() != ""){
 			lbCountDownTitle.setText("Count Down");
 			try {
 
-				lbCountDown.setText(GetTime.getDifferenceDays(pd.readDayCountDown())
-						+ " days away from " + pd.readMission());
+				lbCountDown.setText(GetTime.getDifferenceDays(property.getDayCountDown())
+						+ " days away from " + property.getMission());
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}

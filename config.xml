@@ -12,11 +12,11 @@
     <!--windows平台英文语音-->
     <SpvTTSSwitch>off</SpvTTSSwitch>
     <!--windos平台中文语音-->
-    <SpvTTSSwitchCh>off</SpvTTSSwitchCh>
+    <SpvTTSSwitchCh>on</SpvTTSSwitchCh>
     <FreeTTSSwitch>off</FreeTTSSwitch>
-    <silence>on</silence>
+    <silence>off</silence>
     <dayCountDown>2019-12-31</dayCountDown>        	    
-    <mission>Job2</mission>
+    <mission>xc finish</mission>
 
 
 
