@@ -41,4 +41,5 @@ INSERT INTO "config"("id", "break_time", "popup_on", "popup_size", "notice_text"
 ```
 > 将music文件夹放到jar目录
 > 将run.bat放到jar目录
+> eyepro.db放到jar目录
 > 使用javaProgramStart.bat运行
