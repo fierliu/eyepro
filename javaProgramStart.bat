@@ -3,6 +3,7 @@ cd EyePro_jar
 ::start EyePro1.1.jar
 run.bat
 
+exit
 
 ::‘À––emptyRecycleBin
 ::cd EmptyRecycleBin

@@ -1,14 +1,11 @@
 ## 一、打包方式
 > 用idea Project structure -> artifacts -> + -> from module with dependencies
-
 > jar files from libraries选copy to the output directory....
-
 > directory for meta-inf/manifest.mf: 在选择好入口类后系统会将MANIFEST.MF默认放在src/main/java下（如果原来已生成需要先将其删除），需要将其放在项目下，去掉路径src/main/java，即xxxx\eyepro\下
-
 > build菜单下build artifact
 
 ## 二、部署
-> 1.将eyePro.db copy到jar包路径下
+> 1.将eyePro.db、emptyrecyclebin.exe copy到jar包路径下
 
 表结构：（原文件已有，不需要再执行）
 ```sql

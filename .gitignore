@@ -1,5 +1,7 @@
 .idea
 target
 /.idea
-/target
+/target/**
 .classes
+/classes/artifacts/EyePro_jar
+/EyePro.iml
