@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="522.0" prefWidth="389.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allan.controller.PropertiesController">
    <children>
@@ -18,17 +24,6 @@
                </font>
             </Label>
             <CheckBox fx:id="checkBoxPopUp" mnemonicParsing="false" text="ShowPopUp" />
-            <!--<HBox prefHeight="31.0" prefWidth="327.0">
-               <children>
-                  <ChoiceBox fx:id="CBpopUpPosition" onAction="#CBpopUpPositionHandler" prefHeight="31.0" prefWidth="105.0">
-                     <String fx:value="leftBottom" />
-                     <String fx:value="middle" />
-                     <String fx:value="rightBottom" />
-                  </ChoiceBox>
-                  <Label prefHeight="31.0" prefWidth="60.0" text="弹窗位置" />
-               </children>
-            </HBox>-->
-            <!--<Label text="Label" />-->
             <Label text="Sound Switch">
             	 <font>
                   <Font name="System Bold" size="18.0" />
@@ -36,14 +31,11 @@
             </Label>
             <VBox>
                <children>
-                 	<RadioButton fx:id="radioBtnPlayMusic" mnemonicParsing="false" text="PlayMusic(平台无关，只能提醒，不能报时)">
+                 	<RadioButton fx:id="radioBtnPlayMusic" mnemonicParsing="false" text="Sound notice">
                      <toggleGroup>
                         <ToggleGroup fx:id="group" />
                      </toggleGroup>
                   </RadioButton>
-                 	<RadioButton fx:id="radioBtnPlayTTS1" mnemonicParsing="false" text="PlayTTS-1(Windows平台英文语音)" toggleGroup="$group" />
-                  <RadioButton fx:id="radioBtnPlayTTS2" mnemonicParsing="false" text="PlayTTS-2(平台无关英文语音，需jre8-)" toggleGroup="$group" />
-                  <RadioButton fx:id="radioBtnPlayTTS3" mnemonicParsing="false" text="PlayTTS-3(Windows平台中文语音)" toggleGroup="$group" />
                  	<RadioButton fx:id="radioBtnSilence" mnemonicParsing="false" text="Silence" toggleGroup="$group" />
                </children>
             </VBox>

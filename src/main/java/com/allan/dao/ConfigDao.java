@@ -29,9 +29,6 @@ public class ConfigDao {
 				config.setPopupSize(resultSet.getString("popup_size"));
 				config.setNoticeText(resultSet.getString("notice_text"));
 				config.setMusicOn(resultSet.getString("music_on"));
-				config.setSpvttsOn(resultSet.getString("spvtts_on"));
-				config.setSpvttsChOn(resultSet.getString("spvtts_ch_on"));
-				config.setFreettsOn(resultSet.getString("freetts_on"));
 				config.setMute(resultSet.getString("mute"));
 				config.setDayCountdown(resultSet.getString("day_countdown"));
 				config.setMission(resultSet.getString("mission"));
@@ -67,21 +64,6 @@ public class ConfigDao {
 		if (!StringUtils.isEmpty(config.getMusicOn())) {
 			sql.append(" music_on = '");
 			sql.append(config.getMusicOn());
-			sql.append("', ");
-		}
-		if (!StringUtils.isEmpty(config.getSpvttsOn())) {
-			sql.append(" spvtts_on = '");
-			sql.append(config.getSpvttsOn());
-			sql.append("', ");
-		}
-		if (!StringUtils.isEmpty(config.getSpvttsChOn())) {
-			sql.append(" spvtts_ch_on = '");
-			sql.append(config.getSpvttsChOn());
-			sql.append("', ");
-		}
-		if (!StringUtils.isEmpty(config.getFreettsOn())) {
-			sql.append(" freetts_on = '");
-			sql.append(config.getFreettsOn());
 			sql.append("', ");
 		}
 		if (!StringUtils.isEmpty(config.getMute())) {

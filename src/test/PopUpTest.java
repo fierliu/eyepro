@@ -5,7 +5,6 @@ import com.allan.dao.ConfigDao;
 import com.allan.domain.PopUp;
 import com.allan.utils.MusicPlay;
 import com.allan.utils.PopUpUtil;
-import com.allan.utils.TTS;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;

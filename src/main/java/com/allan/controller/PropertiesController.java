@@ -20,8 +20,7 @@ public class PropertiesController implements Initializable{
 	@FXML
 	private CheckBox  checkBoxPopUp;
 	@FXML
-	private RadioButton radioBtnPlayMusic, radioBtnPlayTTS1, radioBtnPlayTTS2,
-			radioBtnPlayTTS3, radioBtnSilence;
+	private RadioButton radioBtnPlayMusic, radioBtnSilence;
 	@FXML
 	private TextField textFieldMission;
 	@FXML
@@ -36,18 +35,11 @@ public class PropertiesController implements Initializable{
 		this.configDao = new ConfigDao();
 		//初始化弹窗
 		checkBoxPopUp.setSelected("Y".equals(config.getPopupOn()));
-//		CBpopUpPosition.setValue(pdao.readPopUpPosition());
-//		CBpopUpSize.setValue(pdao.readPopUpSize());
 		//初始化声音开关
 		if("Y".equals(config.getMusicOn())){
 			radioBtnPlayMusic.setSelected(true);
-		}else if("Y".equals(config.getSpvttsOn())){
-			radioBtnPlayTTS1.setSelected(true);
-		}else if ("Y".equals(config.getFreettsOn())){
-			radioBtnPlayTTS2.setSelected(true);
-		}else if("Y".equals(config.getSpvttsChOn())){
-            radioBtnPlayTTS3.setSelected(true);
-		}else {
+		}
+			{
 			radioBtnSilence.setSelected(true);
 		}
 		//显示提醒文字
@@ -88,18 +80,6 @@ public class PropertiesController implements Initializable{
 		if(radioBtnPlayMusic.isSelected()){
 			configParam.setMusicOn("Y");
         }
-		//windows平台英文语音
-		if(radioBtnPlayTTS1.isSelected()){
-		    configParam.setSpvttsOn("Y");
-        }
-		//freetts
-		if(radioBtnPlayTTS2.isSelected()){
-			configParam.setFreettsOn("Y");
-		}
-		//windows平台中文语音
-		if(radioBtnPlayTTS3.isSelected()){
-		    configParam.setSpvttsChOn("Y");
-        }
 		//silence
 		if(radioBtnSilence.isSelected()){
 		    configParam.setMute("Y");
@@ -137,9 +117,6 @@ public class PropertiesController implements Initializable{
 		Config configN = new Config();
 		configN.setMute("N");
 		configN.setMusicOn("N");
-		configN.setSpvttsChOn("N");
-		configN.setSpvttsOn("N");
-		configN.setFreettsOn("N");
 		configDao.updateConfig(configN);
 
 		configDao.updateConfig(configParam);
