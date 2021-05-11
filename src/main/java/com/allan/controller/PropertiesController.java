@@ -39,9 +39,7 @@ public class PropertiesController implements Initializable{
         if("Y".equals(config.getMusicOn())){
             radioBtnPlayMusic.setSelected(true);
         }
-        {
-            radioBtnSilence.setSelected(true);
-        }
+        radioBtnSilence.setSelected(true);
         //显示提醒文字
         textAreaNoticeWord.setText(config.getNoticeText());
         textFieldMission.setText(config.getMission());
