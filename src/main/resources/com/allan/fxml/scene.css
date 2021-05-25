@@ -1,0 +1,11 @@
+.button {
+    /*-fx-text-fill: rgba(17, 145,  213);*/
+    -fx-background-color: rgba(231, 231, 231, 0.8);
+    /*-fx-border-radius: 8;*/
+    /*-fx-padding: 6  6  6  6;*/
+    /*-fx-base: #f5f7f4;!*按钮颜色*!*/
+}
+
+.button:hover{/*鼠标滑过*/
+    -fx-background-color: #fcffdc;
+}

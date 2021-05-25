@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="420.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allan.controller.MainController">
+<AnchorPane fx:id="anchorPane" prefHeight="441.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allan.controller.MainController">
    <children>
-      <Pane layoutY="7.0" prefHeight="434.0" prefWidth="849.0">
+      <Pane fx:id="pane" prefHeight="441.0" prefWidth="849.0">
          <children>
-            <ToolBar prefHeight="0.0" prefWidth="849.0">
+            <ToolBar fx:id="toolBar" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" style="-fx-background-color: #f3f3f3;">
               <items>
                   <Button fx:id="btnQuit" mnemonicParsing="false" onAction="#btnQuitHandler" text="退出" />
               </items>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
             </ToolBar>
-            <Label fx:id="lbTime" layoutX="154.0" layoutY="94.0" prefHeight="36.0" prefWidth="258.0" style="-fx-background-color: grey;" text="" />
+            <Label fx:id="lbTime" layoutX="154.0" layoutY="94.0" prefHeight="36.0" prefWidth="258.0" style="-fx-background-color: #bcbcbc;" text="" />
             <Button fx:id="getTimeBtn" layoutX="65.0" layoutY="97.0" mnemonicParsing="false" onAction="#getTimeBtnHandler" text="计时1" />
             <Button fx:id="getTimeBtn1" layoutX="65.0" layoutY="149.0" mnemonicParsing="false" onAction="#getTimeBtn1Handler" text="计时2" />
-            <Label fx:id="lbTime1" layoutX="154.0" layoutY="146.0" prefHeight="36.0" prefWidth="258.0" style="-fx-background-color: grey;" text="" />
+            <Label fx:id="lbTime1" layoutX="154.0" layoutY="146.0" prefHeight="36.0" prefWidth="258.0" style="-fx-background-color: #bcbcbc;" text="" />
             <Button fx:id="getTimeBtn2" layoutX="65.0" layoutY="203.0" mnemonicParsing="false" onAction="#getTimeBtn2Handler" text="计时3" />
-            <Label fx:id="lbTime2" layoutX="154.0" layoutY="200.0" prefHeight="36.0" prefWidth="258.0" style="-fx-background-color: grey;" text="" />
+            <Label fx:id="lbTime2" layoutX="154.0" layoutY="200.0" prefHeight="36.0" prefWidth="258.0" style="-fx-background-color: #bcbcbc;" text="" />
             <Separator layoutX="491.0" layoutY="74.0" orientation="VERTICAL" prefHeight="200.0" />
             <Label fx:id="lbCountDownTitle" layoutX="513.0" layoutY="84.0" text="Count Down" />
-            <Label fx:id="lbCountDown" layoutX="513.0" layoutY="117.0" text="No Message" />
+            <Label fx:id="lbCountDown" alignment="TOP_LEFT" layoutX="513.0" layoutY="117.0" prefHeight="154.0" prefWidth="323.0" text="No Message dfasddsfsdfsdfsfsdafsdfsdfsdfsffsdfdsf" wrapText="true" />
          </children>
       </Pane>
    </children>

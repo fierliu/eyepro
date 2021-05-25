@@ -48,6 +48,7 @@ public class Main extends Application {
     setUserAgentStylesheet(STYLESHEET_CASPIAN);
     Parent root = fxmlloader.load();
     Scene scene = new Scene(root);
+    scene.getStylesheets().add(getClass().getResource("/com/allan/fxml/scene.css").toExternalForm());
     MainController mainController = fxmlloader.getController();
     //传递primaryStage参数给Controller
     mainController.setStage(primaryStage);

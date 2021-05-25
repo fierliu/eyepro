@@ -11,11 +11,15 @@ import com.allan.domain.Config;
 import com.allan.utils.Cache;
 import com.allan.utils.TimeUtil;
 
+import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToolBar;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.springframework.util.StringUtils;
 
@@ -29,11 +33,21 @@ public class MainController implements Initializable{
     private Label lbTime2, lbCountDown, lbCountDownTitle;
     @FXML
     private Button btnQuit, getTimeBtn, getTimeBtn1, getTimeBtn2;
+    @FXML
+    private Pane pane;
+    @FXML
+    private ToolBar toolBar;
+    @FXML
+    private AnchorPane anchorPane;
     @SuppressWarnings("unused")
     private Stage stage;
     private Config config;
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        //设置最大宽度占满
+        pane.prefWidthProperty().bind(anchorPane.widthProperty());
+        toolBar.prefWidthProperty().bind(pane.widthProperty());
         //count down handler
         config = Cache.getCache().getConfigCache();
         if(!StringUtils.isEmpty(config.getDayCountdown())){
