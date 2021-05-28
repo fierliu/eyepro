@@ -1,7 +1,7 @@
 package com.allan.domain;
 
 public class Config {
-    private String breakTime;
+    private String breakTime;//弹窗间隔时间 minutes
     private String popupOn;
     private String popupSize;
     private String noticeText;

@@ -12,11 +12,8 @@ public class PropertiesTest {
 
     public static void main(String[] args) {
 
-        ConfigDao configDao = new ConfigDao();
-        Config config = new Config();
-        config.setFreettsOn("Y");
-        config.setSpvttsOn("Y");
-        configDao.updateConfig(config);
+        int i = Integer.parseInt("36000");
+        System.out.println("i = " + i);
     }
 
 }

@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import com.allan.dao.ConfigDao;
 import com.allan.domain.Config;
+import com.allan.service.PopupService;
 import com.allan.utils.Cache;
 import javafx.scene.control.*;
 
@@ -22,7 +23,7 @@ public class PropertiesController implements Initializable{
     @FXML
     private RadioButton radioBtnPlayMusic, radioBtnSilence;
     @FXML
-    private TextField textFieldMission;
+    private TextField textFieldMission, periodInput;
     @FXML
     private TextArea textAreaNoticeWord;
     @FXML
@@ -35,6 +36,8 @@ public class PropertiesController implements Initializable{
         this.configDao = new ConfigDao();
         //初始化弹窗
         checkBoxPopUp.setSelected("Y".equals(config.getPopupOn()));
+        //初始化周期
+        periodInput.setText(config.getBreakTime());
         //初始化声音开关
         if("Y".equals(config.getMusicOn())){
             radioBtnPlayMusic.setSelected(true);
@@ -110,6 +113,7 @@ public class PropertiesController implements Initializable{
         LocalDate localDate = datePickerMission.getValue();
         configParam.setDayCountdown(localDate.toString());
         configParam.setMission(textFieldMission.getText());
+        configParam.setBreakTime(periodInput.getText());
 
         //先把5个声音开始都置为N
         Config configN = new Config();
@@ -121,6 +125,11 @@ public class PropertiesController implements Initializable{
 
         //重新加载配置到内存
         configDao.load();
+
+        //修改弹窗计时间隔
+        PopupService popupService = PopupService.newInstance();
+        configParam.setPopupOn(checkBoxPopUp.isSelected() ? "Y" : "N");
+        popupService.startTimer(configParam);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("提示");

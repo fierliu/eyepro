@@ -18,6 +18,7 @@ import com.allan.controller.MainController;
 import com.allan.controller.PopupController;
 import com.allan.dao.ConfigDao;
 import com.allan.domain.Config;
+import com.allan.service.PopupService;
 import com.allan.utils.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -53,6 +54,8 @@ public class Main extends Application {
     //传递primaryStage参数给Controller
     mainController.setStage(primaryStage);
     primaryStage.setTitle("EyePro");
+    setUserAgentStylesheet(STYLESHEET_CASPIAN);
+
     //terminate the all threads when close button clicked.
     primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>(){
       @Override
@@ -68,79 +71,8 @@ public class Main extends Application {
     //系统托盘
     enableTray(primaryStage);
 
-    Timer timer = new Timer();
-    TimerTask  timerTask = new TimerTask (){
-      public void run() {
-//            	-----------半点提醒--------------------------------------------
-        if(TimeUtil.getCurrentTimeString().equals("30:00")){
-//          Platform.runLater(()->{
-//            try {
-//              if("Y".equals(config.getPopupOn())) {
-//                showTimedDialog(120000);
-//                setUserAgentStylesheet(STYLESHEET_CASPIAN);
-//              }
-//            } catch (IOException e) {
-//              e.printStackTrace();
-//            }
-//          });
-//          SoundManager.playSound(SoundManager.HALF);
-//					-------------整点提醒-------------------------
-        }else if(TimeUtil.getCurrentTimeString().equals("00:00")){// FIXME @fl: 2021/2/19 改成定间隔的方式, 将该timer放到线程里，程序启动时读取一下配置，每次修改完配置后重新启动线程，再读取一下配置
-          Platform.runLater(()->{
-            try {
-              if("Y".equals(config.getPopupOn())) {
-                showTimedDialog(300000);
-                setUserAgentStylesheet(STYLESHEET_CASPIAN);
-              }
-            } catch (IOException e) {
-              e.printStackTrace();
-            }
-          });
-          SoundManager.playSound(SoundManager.SHARP);
-        }
-      }
-    };
-    timer.schedule (timerTask, 0, 1000);
-  }
-
-  public void showTimedDialog(long time) throws IOException {
-    FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/com/allan/fxml/popup.fxml"));
-    Parent root = fxmlloader.load();
-    Scene scene = new Scene(root);
-//		scene.setFill(null);
-    PopupController controller = fxmlloader.getController();
-    Stage stage = new Stage();
-    stage.setAlwaysOnTop(true);
-    stage.getIcons().add(new Image("/com/allan/pics/tr.png"));
-    stage.setScene(scene);
-    controller.setStage(stage);
-
-    Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-//		stage.setX(primaryScreenBounds.getWidth() - 410);
-    stage.setX(- 8);
-    stage.setY(primaryScreenBounds.getHeight() - 315);
-    //按esc最小化
-    stage.addEventHandler(KeyEvent.KEY_RELEASED, (KeyEvent event) -> {
-      if (KeyCode.ESCAPE == event.getCode()) {
-        stage.setIconified(true);
-      }
-    });
-    stage.show();
-
-    Thread thread = new Thread(() -> {
-      try {
-        Thread.sleep(time);
-        if (stage.isShowing()) {
-          Platform.runLater(() ->
-                  stage.close());
-        }
-        SoundManager.playSoundTimesUp();
-      } catch (Exception exp) {
-        exp.printStackTrace();
-      }
-    });
-    thread.setDaemon(true);
-    thread.start();
+    PopupService popupService = PopupService.newInstance();
+    popupService.startTimer(config);
   }
 
   private void enableTray(final Stage stage) {
