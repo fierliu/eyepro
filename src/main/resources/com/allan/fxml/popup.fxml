@@ -12,6 +12,7 @@
    <children>
       <VBox prefHeight="320.0" prefWidth="400.0">
          <children>
+            <Label fx:id="lbCountdown" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="399.0" text="" textAlignment="CENTER" />
             <Label fx:id="lbMsg" alignment="CENTER" prefHeight="322.0" prefWidth="400.0" text="label" wrapText="true">
                <VBox.margin>
                   <Insets />
