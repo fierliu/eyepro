@@ -4,7 +4,6 @@ import com.allan.domain.Config;
 import com.allan.utils.Cache;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -18,9 +17,6 @@ import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class PopupController implements Initializable {
-
-    @FXML
-    private Button btnOk;
 
     @FXML
     private Label lbMsg, lbCountdown;
@@ -44,14 +40,7 @@ public class PopupController implements Initializable {
         this.stage = stage;
     }
 
-    @FXML
-    public void btnOkHandler(ActionEvent event){
-//        System.out.println("btnOkHandler...");
-        stage.close();
-    }
-
     public void clock() {
-//        lbCountdown.setFont(javafx.scene.text.Font.font(20));
         animation = new Timeline(new KeyFrame(Duration.millis(1000), e -> timelabel()));
         animation.setCycleCount(Timeline.INDEFINITE);
         animation.play();

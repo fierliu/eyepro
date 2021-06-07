@@ -27,6 +27,8 @@
             <Separator layoutX="491.0" layoutY="74.0" orientation="VERTICAL" prefHeight="200.0" />
             <Label fx:id="lbCountDownTitle" layoutX="513.0" layoutY="84.0" text="Count Down" />
             <Label fx:id="lbCountDown" alignment="TOP_LEFT" layoutX="513.0" layoutY="117.0" prefHeight="154.0" prefWidth="323.0" text="No Message dfasddsfsdfsdfsfsdafsdfsdfsdfsffsdfdsf" wrapText="true" />
+            <Label layoutX="65.0" layoutY="54.0" prefHeight="20.0" prefWidth="90.0" text="Next break:" />
+            <Label fx:id="nextBreak" layoutX="168.0" layoutY="54.0" prefHeight="20.0" prefWidth="244.0" />
          </children>
       </Pane>
    </children>
