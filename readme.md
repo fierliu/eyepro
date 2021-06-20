@@ -8,7 +8,8 @@
 > build菜单下build artifact
 
 ## 二、部署
-> 1.将eyePro.db、emptyrecyclebin.exe copy到jar包路径下
+
+1.将eyePro.db、emptyrecyclebin.exe copy到jar包路径下
 
 表结构：（原文件已有，不需要再执行）
 ```sql
@@ -31,14 +32,14 @@ CREATE TABLE "config" (
 INSERT INTO "config"("id", "break_time", "popup_on", "popup_size", "notice_text", "music_on", "spvtts_on", "spvtts_ch_on", "freetts_on", "mute", "day_countdown", "mission") VALUES ('1', '36000', 'Y', '2.0', 'test', 'N', 'Y', 'N', 'Y', 'Y', '2019-12-31', 'test mission');
 
 ```
-> 2.将打包出来的整个文件夹复制到运行目录
-```
-分别将
- jacob-xxx-x32.dll放在C:\Windows\System32
- jacob-xxx-x64.dll放在C:\Windows\SystemWoW64
- 再将这两个放在jdk根目录\bin 
-```
+
+2.将打包出来的整个文件夹复制到运行目录
+
 > 将music文件夹放到jar目录
 > 将run.bat放到jar目录
 > eyepro.db放到jar目录
 > 使用javaProgramStart.bat运行
+
+##其他
+
+可用的jdk版本：jdk1.8.0_291/jdk1.8.0_201
